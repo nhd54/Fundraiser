@@ -1,3 +1,166 @@
-body {
-  background-color: green($color: #000000);
+$color1: #242f41;
+$color2: #6a82a0;
+$color3: #e0ebf8;
+$color4: #859ab2;
+$color5: #9eb2cb;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  .largeColumn {
+    grid-column: span 12;
+    display: grid;
+  }
+
+  .bigColumn {
+    grid-column: span 5;
+    margin-top: 5%;
+  }
+
+  .mediumColumn {
+    grid-column: span 4;
+  }
+
+  #wallPaper {
+    justify-items: center;
+    align-items: center;
+    min-height: 80vh;
+  }
+
+  #category {
+    min-height: 20vh;
+    grid-template-columns: repeat(12, 1fr);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+
+  #donation {
+    min-height: 80vh;
+    grid-template-columns: repeat(12, 1fr);
+    display: grid;
+    background-color: $color2;
+
+    #video {
+      justify-items: center;
+      display: grid;
+    }
+    .bigColumn:first-child {
+      grid-column: 2 / span 5;
+    }
+
+    button {
+      width: 100%;
+      height: 20%;
+      font-size: 2em;
+      color: black;
+      border: 1px solid black;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+
+  #donationInfo {
+    min-height: 25vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: 2 / span 10;
+
+    .information {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+    }
+  }
+
+  #gallery {
+    min-height: 30vh;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  footer {
+    min-height: 25vh;
+    justify-items: center;
+    align-items: center;
+    background-color: $color1;
+  }
+}
+
+#wrapper {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 20vw 80vw;
+
+  h1 {
+    justify-self: center;
+  }
+
+  header {
+    background-color: $color2;
+    height: 25vh;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    img {
+      grid-column: 2 / span 1;
+    }
+
+    h1 {
+      color: white;
+    }
+  }
+
+  nav {
+    grid-column: span 1;
+    min-height: 100vh;
+    display: grid;
+    justify-items: center;
+    background-color: $color1;
+
+    .menu {
+      list-style-type: none;
+      justify-self: center;
+      position: fixed;
+      top: 50%;
+      left: 3%;
+
+      li {
+        margin: 10%;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+
+  #dashboard {
+    grid-column: span 1;
+    min-height: 100vh;
+    grid-template-rows: 25vh auto auto 15vh;
+
+    .donated {
+      grid-template-rows: 10% 90%;
+      border-bottom: 2px solid $color2;
+    }
+
+    .category {
+      justify-items: center;
+      align-items: center;
+      display: grid;
+    }
+
+    footer {
+      height: auto;
+      min-height: 0;
+      background-color: $color2;
+    }
+  }
 }
