@@ -9,6 +9,10 @@ $color5: #9eb2cb;
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 article {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -17,13 +21,18 @@ article {
     grid-column: span 12;
     display: grid;
   }
-
-  .bigColumn {
-    grid-column: span 5;
-    margin-top: 5%;
+  .biggerColumn {
+    grid-column: span 7;
   }
 
-  .mediumColumn {
+  .halfColumn {
+    grid-column: span 6;
+  }
+  .bigColumn {
+    grid-column: span 5;
+  }
+
+  .smallColumn {
     grid-column: span 4;
   }
 
@@ -151,10 +160,76 @@ article {
       border-bottom: 2px solid $color2;
     }
 
+    .settings {
+      grid-row: span 2;
+      grid-column: span 6;
+      display: grid;
+      grid-template-rows: auto auto;
+
+      button {
+        background-color: $color3;
+        grid-column: span 2;
+        justify-self: center;
+        color: black;
+        width: 50%;
+        height: 100%;
+      }
+      #profile {
+        min-height: 50vh;
+        border-right: 2px solid $color2;
+        border-bottom: 2px solid $color2;
+      }
+
+      #fundraise {
+        min-height: 30vh;
+        border-right: 2px solid $color2;
+      }
+
+      #goals {
+        min-height: 50vh;
+        border-top: 2px solid $color2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      #categories {
+        min-height: 30vh;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .details {
+      grid-template-columns: repeat(12, 1fr);
+
+      #time {
+        display: grid;
+        grid-template-rows: repeat(2, 50%);
+        justify-items: center;
+        align-items: center;
+        border-right: 2px solid $color2;
+      }
+
+      #history {
+        border-right: 2px solid $color2;
+      }
+
+      #country,
+      #history {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+      }
+
+      #history,
+      #allDonation {
+        border-top: 2px solid $color2;
+      }
+    }
+
     .category {
       justify-items: center;
       align-items: center;
-      display: grid;
     }
 
     footer {
