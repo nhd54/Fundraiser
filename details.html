@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
+
     <link rel="stylesheet" href="style/css/style.css" />
     <title>Document</title>
   </head>
@@ -17,6 +20,8 @@
           <li><a href="details.html">DETALJER</a></li>
           <li><a href="settings.html">INDSTILLINGER</a></li>
         </ul>
+
+        <button class="test">test</button>
       </nav>
 
       <article class="largeColumn" id="dashboard">
@@ -33,7 +38,8 @@
             <img src="https://via.placeholder.com/100" alt="" />
           </div>
           <div id="country" class="biggerColumn">
-            <img src="https://via.placeholder.com/300" alt="" />
+            <div class="map"></div>
+            <div class="mapInfo"><span></span> <span></span> <span></span></div>
           </div>
         </section>
         <section class="largeColumn details">
@@ -45,5 +51,68 @@
         <footer class="largeColumn"></footer>
       </article>
     </div>
+    <script src="app.js"></script>
+
+    <script>
+      let fyn = [];
+      let jylland = [];
+      let sjaelland = [];
+      let donations = [];
+      let countFyn = document.querySelector(".mapInfo span:nth-child(1)");
+      let countsjaelland = document.querySelector("#country span:nth-child(2)");
+      let countJylland = document.querySelector("#country span:nth-child(3)");
+
+      document.addEventListener("DOMContentLoaded", init);
+
+      async function init() {
+        let headerData = await fetch("maps.html");
+        let header = await headerData.text();
+        document.querySelector(".map").innerHTML = header;
+
+        db.collection("donations")
+          .get()
+          .then(snapshot => {
+            snapshot.docs.forEach(doc => {
+              donations.push(doc.data());
+            });
+            test();
+            count();
+          });
+      }
+
+      function test() {
+        donations.forEach(country => {
+          if (country.country == "fyn") {
+            fyn.push(country);
+          } else if (country.country == "jylland") {
+            jylland.push(country);
+          } else if (country.country == "sjælland") {
+            sjaelland.push(country);
+          }
+        });
+      }
+
+      function count() {
+        if (
+          sjaelland.length > fyn.length &&
+          sjaelland.length > jylland.length
+        ) {
+          document.querySelector("#sjaelland").style.fill = "#242f41";
+          document.querySelector("#fyn").style.fill = "#6a82a0";
+          document.querySelector("#jylland").style.fill = "#6a82a0";
+        } else if (fyn.length > sjaelland.length && fyn.length) {
+          document.querySelector("#sjaelland").style.fill = "#6a82a0";
+          document.querySelector("#fyn").style.fill = "#242f41";
+          document.querySelector("#jylland").style.fill = "#6a82a0";
+        } else if (
+          jylland.length > sjaelland.length &&
+          jylland.length > fyn.length
+        ) {
+          document.querySelector("#sjaelland").style.fill = "#6a82a0";
+          document.querySelector("#fyn").style.fill = "#6a82a0";
+          document.querySelector("#jylland").style.fill = "#242f41";
+        }
+      }
+    </script>
   </body>
 </html>

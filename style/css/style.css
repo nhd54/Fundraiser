@@ -5,6 +5,18 @@
 html {
   overflow-x: hidden; }
 
+.popUp {
+  position: fixed;
+  width: 80%;
+  top: 10%;
+  left: 10%;
+  height: 80%;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: blue;
+  display: none; }
+
 article {
   display: grid;
   grid-template-columns: repeat(12, 1fr); }
@@ -141,7 +153,12 @@ article {
         border-right: 2px solid #6a82a0; }
       #wrapper #dashboard .details #history {
         border-right: 2px solid #6a82a0; }
-      #wrapper #dashboard .details #country,
+      #wrapper #dashboard .details #country {
+        display: grid; }
+        #wrapper #dashboard .details #country .mapInfo {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          justify-items: center; }
       #wrapper #dashboard .details #history {
         display: grid;
         justify-items: center;

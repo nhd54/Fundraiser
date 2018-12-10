@@ -13,6 +13,19 @@ html {
   overflow-x: hidden;
 }
 
+.popUp {
+  position: fixed;
+  width: 80%;
+  top: 10%;
+  left: 10%;
+  height: 80%;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: blue;
+  display: none;
+}
+
 article {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -214,7 +227,16 @@ article {
         border-right: 2px solid $color2;
       }
 
-      #country,
+      #country {
+        display: grid;
+
+        .mapInfo {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          justify-items: center;
+        }
+      }
+
       #history {
         display: grid;
         justify-items: center;

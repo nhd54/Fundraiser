@@ -10,6 +10,15 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="popUp">
+      <form id="add-cafe-form">
+        <input type="text" name="name" placeholder="fornavn" />
+        <input type="text" name="lastname" placeholder="efternavn" />
+        <input type="text" name="amount" placeholder="penge beløb" />
+
+        <button>Add Cafe</button>
+      </form>
+    </div>
     <article>
       <section class="largeColumn" id="wallPaper">
         <img src="https://via.placeholder.com/250" alt="" />
@@ -32,8 +41,9 @@
         <div class="bigColumn" id="video">
           <img src="https://via.placeholder.com/350" alt="" />
         </div>
+
         <div class="bigColumn" id="donator">
-          <button>GIV DONATION</button> <br />
+          <button class="donation">GIV DONATION</button> <br />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi est
             illo asperiores voluptates maiores, magni neque nesciunt veritatis
@@ -68,4 +78,22 @@
   </body>
 
   <script src="app.js"></script>
+
+  <script>
+    const form = document.querySelector("#add-cafe-form");
+
+    document.querySelector(".donation").addEventListener("click", () => {
+      document.querySelector(".popUp").style.display = "block";
+    });
+
+    // saving data
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      db.collection("donations").add({
+        firstname: form.name.value,
+        lastname: form.lastname.value,
+        amount: form.amount.value
+      });
+    });
+  </script>
 </html>
