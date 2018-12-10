@@ -4,9 +4,15 @@ $color3: #e0ebf8;
 $color4: #859ab2;
 $color5: #9eb2cb;
 
+@font-face {
+  font-family: afta sans;
+  src: url(fonts/aftasans.woff2);
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family: afta sans;
 }
 
 html {
@@ -32,10 +38,10 @@ html {
 
 article {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(10, 1fr);
 
   .largeColumn {
-    grid-column: span 12;
+    grid-column: span 10;
     display: grid;
   }
   .biggerColumn {
@@ -50,32 +56,58 @@ article {
   }
 
   .smallColumn {
-    grid-column: span 4;
+    grid-column: span 3;
+    margin: 0 0 0 24vw;
   }
 
   #wallPaper {
     justify-items: center;
     align-items: center;
-    min-height: 80vh;
+    height: 28vw;
+    background-color: $color1;
+    background-image: url(assets/header.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    img {
+      width: 25vw;
+    }
   }
 
   #category {
-    min-height: 20vh;
+    height: 20vw;
     grid-template-columns: repeat(12, 1fr);
     display: grid;
     justify-items: center;
     align-items: center;
+    text-align: center;
+
+    .penge {
+      width: 8vw;
+    }
+    .tekstil {
+      width: 13vw;
+    }
+    .foder {
+      width: 11vw;
+    }
   }
 
   #donation {
-    min-height: 80vh;
+    height: 38vw;
     grid-template-columns: repeat(12, 1fr);
     display: grid;
     background-color: $color2;
 
     #video {
       justify-items: center;
+      align-items: center;
       display: grid;
+    }
+
+    .video {
+      width: 40vw;
     }
     .bigColumn:first-child {
       grid-column: 2 / span 5;
@@ -87,6 +119,8 @@ article {
       font-size: 2em;
       color: black;
       border: 1px solid black;
+      background-image: url(image/givdonationknap.jpg);
+      background-size: cover;
     }
 
     p {
@@ -139,6 +173,9 @@ article {
 
     h1 {
       color: white;
+    }
+    .headerImg {
+      width: 100vw;
     }
   }
 

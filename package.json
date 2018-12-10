@@ -1,7 +1,6 @@
 {
   "name": "eksamen",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,6 +17,7 @@
   },
   "homepage": "https://github.com/nhd54/Fundraiser#readme",
   "devDependencies": {
-    "node-sass": "^4.10.0"
-  }
+    "node-sass": "^4.11.0"
+  },
+  "description": ""
 }

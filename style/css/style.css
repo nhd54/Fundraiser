@@ -1,6 +1,11 @@
+@font-face {
+  font-family: afta sans;
+  src: url(fonts/aftasans.woff2); }
+
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: afta sans; }
 
 html {
   overflow-x: hidden; }
@@ -21,9 +26,9 @@ html {
 
 article {
   display: grid;
-  grid-template-columns: repeat(12, 1fr); }
+  grid-template-columns: repeat(10, 1fr); }
   article .largeColumn {
-    grid-column: span 12;
+    grid-column: span 10;
     display: grid; }
   article .biggerColumn {
     grid-column: span 7; }
@@ -32,25 +37,43 @@ article {
   article .bigColumn {
     grid-column: span 5; }
   article .smallColumn {
-    grid-column: span 4; }
+    grid-column: span 3;
+    margin: 0 0 0 24vw; }
   article #wallPaper {
     justify-items: center;
     align-items: center;
-    min-height: 80vh; }
+    height: 28vw;
+    background-color: #242f41;
+    background-image: url(assets/header.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; }
+    article #wallPaper img {
+      width: 25vw; }
   article #category {
-    min-height: 20vh;
+    height: 20vw;
     grid-template-columns: repeat(12, 1fr);
     display: grid;
     justify-items: center;
-    align-items: center; }
+    align-items: center;
+    text-align: center; }
+    article #category .penge {
+      width: 8vw; }
+    article #category .tekstil {
+      width: 13vw; }
+    article #category .foder {
+      width: 11vw; }
   article #donation {
-    min-height: 80vh;
+    height: 38vw;
     grid-template-columns: repeat(12, 1fr);
     display: grid;
     background-color: #6a82a0; }
     article #donation #video {
       justify-items: center;
+      align-items: center;
       display: grid; }
+    article #donation .video {
+      width: 40vw; }
     article #donation .bigColumn:first-child {
       grid-column: 2 / span 5; }
     article #donation button {
@@ -58,7 +81,9 @@ article {
       height: 20%;
       font-size: 2em;
       color: black;
-      border: 1px solid black; }
+      border: 1px solid black;
+      background-image: url(image/givdonationknap.jpg);
+      background-size: cover; }
     article #donation p {
       text-align: center; }
   article #donationInfo {
@@ -93,6 +118,8 @@ article {
       grid-column: 2 / span 1; }
     #wrapper header h1 {
       color: white; }
+    #wrapper header .headerImg {
+      width: 100vw; }
   #wrapper nav {
     grid-column: span 1;
     min-height: 100vh;
