@@ -20,8 +20,6 @@
           <li><a href="details.html">DETALJER</a></li>
           <li><a href="settings.html">INDSTILLINGER</a></li>
         </ul>
-
-        <button class="test">test</button>
       </nav>
 
       <article class="largeColumn" id="dashboard">
@@ -57,10 +55,11 @@
       let fyn = [];
       let jylland = [];
       let sjaelland = [];
+      let sum = 0;
       let donations = [];
-      let countFyn = document.querySelector(".mapInfo span:nth-child(1)");
-      let countsjaelland = document.querySelector("#country span:nth-child(2)");
-      let countJylland = document.querySelector("#country span:nth-child(3)");
+      let countFyn = document.querySelector(".mapInfo span:nth-child(2)");
+      let countsjaelland = document.querySelector("#country span:nth-child(3)");
+      let countJylland = document.querySelector("#country span:nth-child(1)");
 
       document.addEventListener("DOMContentLoaded", init);
 
@@ -77,6 +76,14 @@
             });
             test();
             count();
+
+            sum = fyn.length + jylland.length + sjaelland.length;
+
+            countFyn.textContent = Math.round((fyn.length / sum) * 100) + "%";
+            countJylland.textContent =
+              Math.round((jylland.length / sum) * 100) + "%";
+            countsjaelland.textContent =
+              Math.round((sjaelland.length / sum) * 100) + "%";
           });
       }
 
