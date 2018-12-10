@@ -67,7 +67,7 @@ article {
     height: 38vw;
     grid-template-columns: repeat(12, 1fr);
     display: grid;
-    background-color: #6a82a0; }
+    background-color: #9db1cb; }
     article #donation #video {
       justify-items: center;
       align-items: center;
@@ -76,12 +76,17 @@ article {
       width: 40vw; }
     article #donation .bigColumn:first-child {
       grid-column: 2 / span 5; }
+    article #donation #donator {
+      margin: 0vw 0 0 3vw; }
     article #donation button {
-      width: 100%;
-      height: 20%;
+      width: 40vw;
+      height: 6vw;
       font-size: 2em;
-      color: black;
-      border: 1px solid black;
+      margin: 6vw 0 0 0vw;
+      color: #fff;
+      background-color: #6a82a0;
+      border-radius: 0.5vw;
+      border: 1px solid #fff;
       background-image: url(image/givdonationknap.jpg);
       background-size: cover; }
     article #donation p {
@@ -93,10 +98,13 @@ article {
     article #donationInfo .information {
       display: grid;
       justify-items: center;
-      align-items: center; }
+      align-items: center;
+      width: 10vw; }
   article #gallery {
     min-height: 30vh;
     grid-template-columns: repeat(4, 1fr); }
+    article #gallery .imgIndex {
+      width: 25vw; }
   article footer {
     min-height: 25vh;
     justify-items: center;
