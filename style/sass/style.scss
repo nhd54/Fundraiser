@@ -59,6 +59,7 @@ article {
   .smallColumn {
     grid-column: span 3;
     margin: 0 0 0 24vw;
+    width: 20vw;
   }
 
   #wallPaper {
@@ -66,7 +67,7 @@ article {
     align-items: center;
     height: 28vw;
     background-color: $color1;
-    background-image: url(assets/header.jpg);
+    background-image: url(./image/header.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -83,6 +84,8 @@ article {
     justify-items: center;
     align-items: center;
     text-align: center;
+    color: $color2;
+    font-size: 1.5vw;
 
     .penge {
       width: 8vw;
@@ -163,6 +166,28 @@ article {
     justify-items: center;
     align-items: center;
     background-color: $color1;
+    color: #fff;
+    height: 19vw;
+    text-align: center;
+    padding: 3.5vw 0 0 0;
+
+    .some {
+      width: 15vw;
+      margin: 0.5vw 0 0.5vw 0;
+    }
+
+    h2 {
+      font-size: 1.2vw;
+    }
+    .mail {
+      font-weight: 100;
+      font-size: 2vw;
+      margin: 2vw 0 2vw 0;
+    }
+
+    img {
+      width: 3vw;
+    }
   }
 }
 

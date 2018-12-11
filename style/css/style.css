@@ -38,13 +38,14 @@ article {
     grid-column: span 5; }
   article .smallColumn {
     grid-column: span 3;
-    margin: 0 0 0 24vw; }
+    margin: 0 0 0 24vw;
+    width: 20vw; }
   article #wallPaper {
     justify-items: center;
     align-items: center;
     height: 28vw;
     background-color: #242f41;
-    background-image: url(assets/header.jpg);
+    background-image: url(./image/header.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover; }
@@ -56,7 +57,9 @@ article {
     display: grid;
     justify-items: center;
     align-items: center;
-    text-align: center; }
+    text-align: center;
+    color: #6a82a0;
+    font-size: 1.5vw; }
     article #category .penge {
       width: 8vw; }
     article #category .tekstil {
@@ -92,7 +95,7 @@ article {
     article #donation p {
       text-align: center; }
   article #donationInfo {
-    min-height: 25vh;
+    height: 19vw;
     grid-template-columns: repeat(4, 1fr);
     grid-column: 2 / span 10; }
     article #donationInfo .information {
@@ -109,7 +112,22 @@ article {
     min-height: 25vh;
     justify-items: center;
     align-items: center;
-    background-color: #242f41; }
+    background-color: #242f41;
+    color: #fff;
+    height: 19vw;
+    text-align: center;
+    padding: 3.5vw 0 0 0; }
+    article footer .some {
+      width: 15vw;
+      margin: 0.5vw 0 0.5vw 0; }
+    article footer h2 {
+      font-size: 1.2vw; }
+    article footer .mail {
+      font-weight: 100;
+      font-size: 2vw;
+      margin: 2vw 0 2vw 0; }
+    article footer img {
+      width: 3vw; }
 
 #wrapper {
   width: 100vw;
