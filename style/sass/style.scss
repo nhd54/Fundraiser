@@ -140,14 +140,22 @@ article {
   }
 
   #donationInfo {
-    height: 19vw;
+    height: 18vw;
+    margin: 2vw 0 0 0;
     grid-template-columns: repeat(4, 1fr);
     grid-column: 2 / span 10;
+    color: $color2;
 
     .information {
       display: grid;
       justify-items: center;
       align-items: center;
+      width: 13vw;
+      font-size: 1.3vw;
+      height: 16vw;
+    }
+
+    img {
       width: 10vw;
     }
   }

@@ -95,13 +95,19 @@ article {
     article #donation p {
       text-align: center; }
   article #donationInfo {
-    height: 19vw;
+    height: 18vw;
+    margin: 2vw 0 0 0;
     grid-template-columns: repeat(4, 1fr);
-    grid-column: 2 / span 10; }
+    grid-column: 2 / span 10;
+    color: #6a82a0; }
     article #donationInfo .information {
       display: grid;
       justify-items: center;
       align-items: center;
+      width: 13vw;
+      font-size: 1.3vw;
+      height: 16vw; }
+    article #donationInfo img {
       width: 10vw; }
   article #gallery {
     min-height: 30vh;
