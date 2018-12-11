@@ -43,11 +43,10 @@ article {
   article #wallPaper {
     justify-items: center;
     align-items: center;
-    height: 28vw;
+    height: 30vw;
     background-color: #242f41;
-    background-image: url(./image/header.jpg);
+    background-image: url(../../image/header-01.jpg);
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover; }
     article #wallPaper img {
       width: 25vw; }
