@@ -11,44 +11,43 @@
   </head>
   <body>
     <div class="popUp">
+     
       <form id="add-cafe-form">
-        <input type="text" name="name" placeholder="fornavn" />
-        <input type="text" name="lastname" placeholder="efternavn" />
-        <input type="text" name="email" placeholder="din email" />
-        <input type="text" name="amount" placeholder="penge beløb" />
-        <select name="country">
-          <option value="sjælland">Sjælland</option>
-          <option value="jylland">Jylland</option>
-          <option value="fyn">Fyn</option>
-        </select>
-        <select name="textil">
-          <option value="">Vælg textil & tilbehør type</option>
-          <option value="tæpper">Tæpper</option>
-          <option value="tøj">Tøj</option>
-          <option value="hundedækken">Hundedækken</option>
-          <option value="hundekurv">Hundekurv</option>
-          <option value="tilbehør til hunde">Tilbehør til hunde</option>
-        </select>
-
-        <select name="pleje">
-          <option value="">Vælg foder & pleje</option>
-          <option value="hundefoder"> Hundefoder </option>
-          <option value="hundegodbidder">Hundegodbidder</option>
-          <option value="loppekur">Loppekur</option>
-          <option value="ormekur">Ormekur</option>
-        </select>
-        <button id="giveDonation">GIV DONATION</button>
-        <button id="textil">vælg textil & tilbehør type</button>
-        <div class="textil">
-          Tæpper<input type="text" name="tæpper" /> <br />
-          Tøj <input type="text" name="Tøj" /> <br />
-          Hundedækken <input type="text" name="Hundedækken" /> <br />
-          Hundekurv <input type="text" name="Hundekurv" /> <br />
-          Tilbehør til hunde<input type="text" name="Tilbehør" />
-
-          <button id="test">test</button>
-        </div>
-      </form>
+          <div class="left">  <input type="text" name="name" placeholder="fornavn" />
+            <input type="text" name="lastname" placeholder="efternavn" class="lastname" />   
+            <input type="text" name="email" placeholder="din email" class="email" /> <br>
+           
+            
+            <select class="country" name="country">
+              <option value="sjælland">Sjælland</option>
+              <option value="jylland">Jylland</option>
+              <option value="fyn">Fyn</option>
+            </select></div>
+        
+        <div class="right"> 
+          <input type="text" name="amount" placeholder="penge beløb" /> <br>
+          <select  name="textil">
+              <option value="">Vælg textil & tilbehør type</option>
+              <option value="tæpper">Tæpper</option>
+              <option value="tøj">Tøj</option>
+              <option value="hundedækken">Hundedækken</option>
+              <option value="hundekurv">Hundekurv</option>
+              <option value="tilbehør">Tilbehør</option>
+            </select>
+            <br>
+            <select  name="attend">
+                <option value="">Vælg foder & pleje</option>
+                <option value="hundefoder">Hundefoder</option>
+                <option value="hundegodbidder">Hundegodbidder</option>
+                <option value="loppekur">Loppekur</option>
+                <option value="ormekur">Ormekur</option>
+              </select></div>
+              <button id="giveDonation">GIV DONATION</button>
+            </form>
+          </div>
+         
+          
+    
     </div>
     <article>
       <section class="largeColumn" id="wallPaper">
@@ -128,22 +127,41 @@
   <script src="app.js"></script>
 
   <script>
+
+     let fyn = [];
+      let jylland = [];
+      let sjaelland = [];
+      let sum = 0;
+      let fullAmount = [];
+      let donations = [];
     const form = document.querySelector("#add-cafe-form");
     document.querySelector(".donation").addEventListener("click", () => {
       document.querySelector(".popUp").style.display = "block";
     });
+    db.collection("donations")
+          .get()
+          .then(snapshot => {
+            snapshot.docs.forEach(doc => {
+              donations.push(doc.data());
+            });
+            count();
+          });
 
+
+
+
+          function count() {
+        donations.forEach(amount => {
+         console.log(amount.amount); 
+
+         if(amount.amount > 0) {
+          fullAmount.push(amount.amount);
+         }
+         
+        });
+      }
     // saving data
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-
-      document.querySelector("#textil").addEventListener("click", () => {
-        document.querySelector(".textil").style.display = "block";
-      });
-
-      document.querySelector("#test").addEventListener("click", () => {
-        console.log(form.tæpper.value.length);
-      });
+    form.addEventListener("submit", e => {  e.preventDefault();
 
       document.querySelector("#giveDonation").addEventListener("click", () => {
         db.collection("donations").add({
@@ -151,16 +169,15 @@
           lastname: form.lastname.value,
           email: form.email.value,
           country: form.country.value,
-          attend: form.pleje.value,
-          amount: form.amount.value
+          amount: form.amount.value,
+          attend: form.attend.value,
+          textil: form.textil.value
         });
 
         form.name.value = "";
         form.lastname.value = "";
         form.email.value = "";
         form.country.value = "";
-        form.textil.value = "";
-        form.pleje.value = "";
         form.amount.value = "";
       });
     });
