@@ -5,7 +5,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: afta sans; }
+  font-family: afta sans;
+  font-weight: 100; }
 
 html {
   overflow-x: hidden; }
@@ -58,6 +59,11 @@ article {
     grid-column: span 3;
     margin: 0 0 0 24vw;
     width: 20vw; }
+  article .smallColumnDb {
+    grid-column: span 1;
+    margin: 1vw 0 0 10vw;
+    width: 12vw;
+    text-align: center; }
   article #wallPaper {
     justify-items: center;
     align-items: center;
@@ -99,16 +105,17 @@ article {
     article #donation #donator {
       margin: 0vw 0 0 3vw; }
     article #donation button {
-      width: 40vw;
+      width: 31vw;
       height: 6vw;
       font-size: 2em;
       margin: 6vw 0 0 0vw;
       color: #fff;
       background-color: #6a82a0;
-      border-radius: 0.5vw;
-      border: 1px solid #fff;
-      background-image: url(image/givdonationknap.jpg);
-      background-size: cover; }
+      border-radius: 1.5vw;
+      border: 4px solid #fff;
+      background-image: url(../../image/givdonationknap.jpg);
+      background-size: cover;
+      background-repeat: no-repeat; }
     article #donation p {
       text-align: center; }
   article #donationInfo {
@@ -135,7 +142,9 @@ article {
     min-height: 25vh;
     justify-items: center;
     align-items: center;
-    background-color: #242f41;
+    background-image: url(../../image/footer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #fff;
     height: 19vw;
     text-align: center;
@@ -161,12 +170,15 @@ article {
   #wrapper header {
     background-color: #6a82a0;
     height: 25vh;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: 5vw 0vw 2vw 20vw;
     align-items: center; }
     #wrapper header img {
-      grid-column: 2 / span 1; }
+      grid-column: 2 / span 1;
+      width: 4.5vw; }
     #wrapper header h1 {
-      color: white; }
+      color: white;
+      font-size: 2vw;
+      font-weight: 100; }
     #wrapper header .headerImg {
       width: 100vw; }
   #wrapper nav {
@@ -174,25 +186,45 @@ article {
     min-height: 100vh;
     display: grid;
     justify-items: center;
-    background-color: #242f41; }
+    background-color: #242f41;
+    position: fixed;
+    width: 20vw; }
+    #wrapper nav img {
+      width: 13vw;
+      margin: 1vw 0 0 0; }
     #wrapper nav .menu {
       list-style-type: none;
       justify-self: center;
       position: fixed;
-      top: 50%;
-      left: 3%; }
+      width: 19vw;
+      top: 18vw;
+      left: 2vw;
+      font-size: 1.5vw; }
       #wrapper nav .menu li {
-        margin: 10%; }
+        margin: 2vw 0 0 1vw;
+        height: 3vw; }
+        #wrapper nav .menu li img {
+          width: 2vw; }
         #wrapper nav .menu li a {
           text-decoration: none;
-          color: white; }
+          color: white;
+          justify-items: center;
+          align-items: center; }
   #wrapper #dashboard {
     grid-column: span 1;
+    width: 80vw;
+    margin: 0 0 0 20vw;
     min-height: 100vh;
     grid-template-rows: 25vh auto auto 15vh; }
     #wrapper #dashboard .donated {
-      grid-template-rows: 10% 90%;
-      border-bottom: 2px solid #6a82a0; }
+      grid-template-rows: 2vw 15vw;
+      border-bottom: 2px solid #6a82a0;
+      color: #6a82a0;
+      margin: 1vw 0 0 0; }
+      #wrapper #dashboard .donated img {
+        width: 11vw; }
+      #wrapper #dashboard .donated .pengeDb {
+        width: 7vw; }
     #wrapper #dashboard .settings {
       grid-row: span 2;
       grid-column: span 6;
