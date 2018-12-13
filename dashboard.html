@@ -115,9 +115,9 @@
             snapshot.docs.forEach(doc => {
               top3.push(doc.data());
             });
-            nytest.children[1].children[2].textContent = "test1";
-            nytest.children[2].children[2].textContent = "test2";
-            nytest.children[3].children[2].textContent = "test3";
+            nytest.children[1].children[2].textContent = top3[0].name;
+            nytest.children[2].children[2].textContent = top3[1].name;
+            nytest.children[3].children[2].textContent = top3[2].name;
           });
           console.log(document.querySelector("#userDonation"));
 
