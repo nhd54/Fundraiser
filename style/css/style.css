@@ -16,8 +16,8 @@ html {
   width: 60vw;
   background-color: #6a82a0; }
   .headerPopUp img {
-    width: 8vw;
-    margin: 1vw 0 0 26vw; }
+    width: 10vw;
+    margin: 1vw 0 0 25vw; }
 
 .footerPopUp {
   height: 8vw;
@@ -276,7 +276,7 @@ article {
     grid-template-columns: repeat(4, 1fr); }
     article #gallery .imgIndex {
       width: 25vw; }
-  article footer {
+  article footerIndex {
     min-height: 25vh;
     justify-items: center;
     align-items: center;
@@ -287,16 +287,16 @@ article {
     height: 19vw;
     text-align: center;
     padding: 3.5vw 0 0 0; }
-    article footer .some {
+    article footerIndex .some {
       width: 15vw;
       margin: 0.5vw 0 0.5vw 0; }
-    article footer h2 {
+    article footerIndex h2 {
       font-size: 1.2vw; }
-    article footer .mail {
+    article footerIndex .mail {
       font-weight: 100;
       font-size: 2vw;
       margin: 2vw 0 2vw 0; }
-    article footer img {
+    article footerIndex img {
       width: 3vw; }
 
 #wrapper {
@@ -352,7 +352,7 @@ article {
     grid-column: span 1;
     width: 80vw;
     margin: 0 0 0 20vw;
-    min-height: 100vh;
+    height: 75vw;
     grid-template-rows: 25vh auto auto 15vh; }
     #wrapper #dashboard .donated {
       grid-template-rows: 2vw 15vw;
@@ -363,34 +363,105 @@ article {
         width: 11vw; }
       #wrapper #dashboard .donated .pengeDb {
         width: 7vw; }
+    #wrapper #dashboard h3 {
+      color: #6a82a0;
+      display: inline-block;
+      margin: 0.7vw 0vw 0 2.5vw; }
     #wrapper #dashboard .settings {
-      grid-row: span 2;
-      grid-column: span 6;
+      grid-row: span 1;
       display: grid;
       grid-template-rows: auto auto; }
       #wrapper #dashboard .settings button {
-        background-color: #e0ebf8;
-        grid-column: span 2;
-        justify-self: center;
-        color: black;
-        width: 50%;
-        height: 100%; }
+        width: 20vw;
+        height: 4vw;
+        font-size: 1.4vw;
+        color: #242f41;
+        margin: 0 6vw 0 0;
+        background-color: #e0ecfc;
+        border: 0.1vw solid #242f41; }
       #wrapper #dashboard .settings #profile {
-        min-height: 50vh;
+        min-height: 40vh;
+        width: 38vw;
+        padding: 0 0 1vw 0;
         border-right: 2px solid #6a82a0;
         border-bottom: 2px solid #6a82a0; }
+        #wrapper #dashboard .settings #profile .bottomPos {
+          margin: 2vw 0 0 3vw;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          align-items: flex-end; }
+        #wrapper #dashboard .settings #profile img {
+          width: 5vw; }
       #wrapper #dashboard .settings #fundraise {
         min-height: 30vh;
+        width: 38vw;
+        padding: 2vw 0 0 0;
         border-right: 2px solid #6a82a0; }
+        #wrapper #dashboard .settings #fundraise .bottomPos {
+          margin: 2vw 0 0 3vw;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          align-items: flex-end; }
       #wrapper #dashboard .settings #goals {
         min-height: 50vh;
         border-top: 2px solid #6a82a0;
         display: grid;
-        grid-template-columns: repeat(2, 1fr); }
+        padding: 0 0 1vw 1vw;
+        width: 41vw;
+        grid-template-columns: repeat(2, 1fr);
+        color: #6a82a0; }
+        #wrapper #dashboard .settings #goals img {
+          width: 8vw; }
+        #wrapper #dashboard .settings #goals .information {
+          display: grid;
+          justify-items: center;
+          align-items: center;
+          width: 16vw;
+          font-size: 1.3vw;
+          height: 14vw; }
+        #wrapper #dashboard .settings #goals .bottomPos {
+          width: 20vw;
+          height: 4vw;
+          font-size: 1.4vw;
+          color: #242f41;
+          grid-column: span 2;
+          margin: 0 6vw 0 2vw;
+          background-color: #e0ecfc; }
       #wrapper #dashboard .settings #categories {
         min-height: 30vh;
         display: grid;
-        grid-template-columns: repeat(3, 1fr); }
+        grid-template-columns: repeat(3, 1fr);
+        margin: 1vw; }
+        #wrapper #dashboard .settings #categories .bottomPos {
+          width: 20vw;
+          height: 4vw;
+          font-size: 1.4vw;
+          color: #242f41;
+          grid-column: span 3;
+          margin: 0 6vw 0 2vw;
+          background-color: #e0ecfc; }
+        #wrapper #dashboard .settings #categories .penge {
+          width: 7vw; }
+        #wrapper #dashboard .settings #categories .tekstil {
+          width: 12vw; }
+        #wrapper #dashboard .settings #categories .foder {
+          width: 10.9vw; }
+        #wrapper #dashboard .settings #categories .settingsAvatar {
+          width: 5vw;
+          display: inline-block; }
+        #wrapper #dashboard .settings #categories .dashboardKategori {
+          width: 20vw;
+          height: 4vw;
+          font-size: 1.4vw;
+          color: #242f41;
+          grid-column: span 3;
+          margin: 0 6vw 0 0;
+          background-color: #e0ecfc;
+          border: 0.1vw solid #242f41; }
+        #wrapper #dashboard .settings #categories .smallColumnSettings {
+          color: #6a82a0;
+          text-align: center;
+          margin: 1vw; }
     #wrapper #dashboard .details {
       grid-template-columns: repeat(12, 1fr); }
       #wrapper #dashboard .details #time {
@@ -418,6 +489,6 @@ article {
       justify-items: center;
       align-items: center; }
     #wrapper #dashboard footer {
-      height: auto;
+      height: 10vw;
       min-height: 0;
       background-color: #6a82a0; }

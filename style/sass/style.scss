@@ -399,7 +399,7 @@ article {
     }
   }
 
-  footer {
+  footerIndex {
     min-height: 25vh;
     justify-items: center;
     align-items: center;
@@ -505,7 +505,8 @@ article {
     grid-column: span 1;
     width: 80vw;
     margin: 0 0 0 20vw;
-    min-height: 100vh;
+
+    height: 75vw;
     grid-template-rows: 25vh auto auto 15vh;
 
     .donated {
@@ -522,43 +523,136 @@ article {
         width: 7vw;
       }
     }
-
+    h3 {
+      color: $color2;
+      display: inline-block;
+      margin: 0.7vw 0vw 0 2.5vw;
+    }
     .settings {
-      grid-row: span 2;
-      grid-column: span 6;
+      grid-row: span 1;
       display: grid;
       grid-template-rows: auto auto;
 
       button {
-        background-color: $color3;
-        grid-column: span 2;
-        justify-self: center;
-        color: black;
-        width: 50%;
-        height: 100%;
+        width: 20vw;
+        height: 4vw;
+        font-size: 1.4vw;
+        color: #242f41;
+        margin: 0 6vw 0 0;
+        background-color: #e0ecfc;
+        border: 0.1vw solid #242f41;
       }
       #profile {
-        min-height: 50vh;
+        min-height: 40vh;
+        width: 38vw;
+        padding: 0 0 1vw 0;
         border-right: 2px solid $color2;
         border-bottom: 2px solid $color2;
+
+        .bottomPos {
+          margin: 2vw 0 0 3vw;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          align-items: flex-end;
+        }
+
+        img {
+          width: 5vw;
+        }
       }
 
       #fundraise {
         min-height: 30vh;
+        width: 38vw;
+        padding: 2vw 0 0 0;
         border-right: 2px solid $color2;
+
+        .bottomPos {
+          margin: 2vw 0 0 3vw;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          align-items: flex-end;
+        }
       }
 
       #goals {
         min-height: 50vh;
         border-top: 2px solid $color2;
         display: grid;
+        padding: 0 0 1vw 1vw;
+        width: 41vw;
         grid-template-columns: repeat(2, 1fr);
+        color: $color2;
+
+        img {
+          width: 8vw;
+        }
+
+        .information {
+          display: grid;
+          justify-items: center;
+          align-items: center;
+          width: 16vw;
+          font-size: 1.3vw;
+          height: 14vw;
+        }
+        .bottomPos {
+          width: 20vw;
+          height: 4vw;
+          font-size: 1.4vw;
+          color: #242f41;
+          grid-column: span 2;
+          margin: 0 6vw 0 2vw;
+          background-color: #e0ecfc;
+        }
       }
 
       #categories {
         min-height: 30vh;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        margin: 1vw;
+
+        .bottomPos {
+          width: 20vw;
+          height: 4vw;
+          font-size: 1.4vw;
+          color: #242f41;
+          grid-column: span 3;
+          margin: 0 6vw 0 2vw;
+          background-color: #e0ecfc;
+        }
+
+        .penge {
+          width: 7vw;
+        }
+        .tekstil {
+          width: 12vw;
+        }
+        .foder {
+          width: 10.9vw;
+        }
+        .settingsAvatar {
+          width: 5vw;
+          display: inline-block;
+        }
+
+        .dashboardKategori {
+          width: 20vw;
+          height: 4vw;
+          font-size: 1.4vw;
+          color: #242f41;
+          grid-column: span 3;
+          margin: 0 6vw 0 0;
+          background-color: #e0ecfc;
+          border: 0.1vw solid #242f41;
+        }
+
+        .smallColumnSettings {
+          color: #6a82a0;
+          text-align: center;
+          margin: 1vw;
+        }
       }
     }
 
@@ -605,7 +699,7 @@ article {
     }
 
     footer {
-      height: auto;
+      height: 10vw;
       min-height: 0;
       background-color: $color2;
     }

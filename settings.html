@@ -10,39 +10,114 @@
   <body>
     <div id="wrapper">
       <nav>
-        <img src="https://via.placeholder.com/150" alt="" />
+        <img src="image/logo.svg" alt="" />
 
         <ul class="menu">
-          <li><a href="dashboard.html">OVERSIGT</a></li>
-          <li><a href="details.html">DETALJER</a></li>
-          <li><a href="settings.html">INDSTILLINGER</a></li>
+          <li>
+            <img src="image/icon_oversigt.svg" />
+            <a href="dashboard.html">OVERSIGT</a>
+          </li>
+          <li>
+            <img src="image/icon_detaljer.svg" />
+            <a href="details.html">DETALJER</a>
+          </li>
+          <li>
+            <img src="image/icon_settings.svg" />
+            <a href="settings.html">INDSTILLINGER</a>
+          </li>
         </ul>
       </nav>
       <article class="largeColumn" id="dashboard">
         <header class="largeColumn">
-          <img src="https://via.placeholder.com/150" alt="" />
+          <img src="image/icon_oversigt.svg" alt="" /><br />
           <h1>
             FUNDRAISER <br />
-            OVERSIGT
+            INDSTILLINGER
           </h1>
         </header>
         <section class="settings">
-          <div id="profile"></div>
-          <div id="fundraise"></div>
+          <div id="profile">
+            <h3>PROFIL</h3>
+            <br /><br />
+            <h3>PERSONLIGE OPLYSNINGER</h3>
+            <br />
+            <h3>NAVN</h3>
+            Mia
+            <h3>EFTERNAVN</h3>
+            Svejgaard <br />
+            <h3>EMAIL</h3>
+            miasvejgaard@hotmail.com <br /><br />
+            <h3>LOGIN</h3>
+            <br />
+            <h3>BRUGERNAVN</h3>
+            Mia
+            <h3>PASSWORD</h3>
+            280289#
+            <div class="bottomPos">
+              <button>REDIGER PROFIL</button
+              ><img class="settingsAvatar" src="image/icon_mand.svg" />
+            </div>
+          </div>
+          <div id="fundraise">
+            <h3>FUNDRAISER DETALJER</h3>
+            <br /><br />
+            <h3>FUNDRAISER NAVN</h3>
+            Støt hund & Hjemløs <br /><br />
+            <h3>BANKOPLYSNINGER</h3>
+            <br />
+
+            <h3>Kontonr</h3>
+
+            0000123456789<br /><br />
+            <h3>IBAN:</h3>
+            IBAN01234
+            <h3>SWIFT/BIC:</h3>
+            #012345
+            <div class="bottomPos">
+              <button class="fundraiserButton">REDIGER PROFIL</button>
+            </div>
+          </div>
         </section>
         <section class="settings">
           <div id="categories">
-            <img src="https://via.placeholder.com/150" alt="" />
-            <img src="https://via.placeholder.com/150" alt="" />
-            <img src="https://via.placeholder.com/150" alt="" />
-            <button>Tilføj kategori</button>
+            <div class="category smallColumnSettings">
+              <img class="penge" src="image/icon_penge_kategori.svg" alt="" />
+              <br />
+              <span>PENGE</span>
+            </div>
+            <div class="category smallColumnSettings">
+              <img
+                class="tekstil"
+                src="image/icon_tekstil_kategori.svg"
+                alt=""
+              />
+              <br />
+              <span>TEKSTIL & TILBEHØR</span>
+            </div>
+            <div class="category smallColumnSettings">
+              <img class="foder" src="image/icon_foder_donation.svg" alt="" />
+              <br />
+              <span>FODER & PLEJE</span>
+            </div>
+            <div class="bottomPos"><button>TILFØJ KATEGORI</button></div>
           </div>
           <div id="goals">
-            <img src="https://via.placeholder.com/150" alt="" />
-            <img src="https://via.placeholder.com/150" alt="" />
-            <img src="https://via.placeholder.com/150" alt="" />
-            <img src="https://via.placeholder.com/150" alt="" />
-            <button>Rediger detaljer</button>
+            <div class="information">
+              MÅL<img src="image/icon_maal.svg" alt="" />100.000 DKK
+            </div>
+            <div class="information">
+              GEOGRAFI<img src="image/icon_jord.svg" alt="" /> DANMARK
+            </div>
+            <div class="information">
+              FUNDRAISER START<img
+                src="image/icon_start.svg"
+                alt=""
+              />26.11.2018
+            </div>
+            <div class="information">
+              FUNDRAISER SLUT<img src="image/icon_dato.svg" alt="" />23.11.56.04
+            </div>
+            <div class="bottomPos"><button>REDIGER DETALJER</button></div>
           </div>
         </section>
         <footer class="largeColumn"></footer>
