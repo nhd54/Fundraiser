@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style/css/style.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -26,30 +28,158 @@
         <section class="largeColumn donated">
           <h1 class="largeColumn">DONERET I ALT</h1>
           <div class="category smallColumnDb">
-            <img class="pengeDb" src="image/icon_penge_kategori.svg" alt="" /><br>PENGE<br>65.000 DKK
+            <img class="pengeDb" src="image/icon_penge_kategori.svg" alt="" /><br>PENGE<br> <p class="indsamlet"></p>
           </div>
           <div class="category smallColumnDb">
             <img src="image/icon_tekstil_kategori.svg" alt="" /><br>TEXTIL & TILBEHØR<br>
-            25 tæpper, 15 kurve, <br>
-            17 jakker
+           <p> <span class="blanket"></span>, <span class="basket"></span>, <br>
+            <span class="cloth"></span>, <span class="toys"></span>, <br> 
+            <span class="dogblankets"></span> </p>
+           
           </div>
           <div class="category smallColumnDb">
-            <img src="image/icon_foder_donation.svg" alt="" /><br>FODER & PLEJE
+            <img src="image/icon_foder_donation.svg" alt="" /><br>FODER & PLEJE <br>
+            <p> <span class="hundefoder"></span>, <span class="hundegodbidder"></span>, <br>
+              <span class="loppekur"></span>, <span class="ormekur"></span>, <br> 
+              </p>
           </div>
         </section>
-        <section class="largeColumn donated">
+        <section class="largeColumn donated" id="userDonation">
                 <h1 class="largeColumn">NYESTE DONATIONER</h1>
                 <div class="category smallColumnDb">
-                  <img src="image/icon_mand.svg" alt="" /><br>Anonym 125 DKK
+                  <img src="image/icon_mand.svg" alt="" /><br> <p class="user"></p> 
                 </div>
                 <div class="category smallColumnDb">
-                  <img src="image/icon_mand.svg" alt="" /><br>Anonym 125 DKK
+                  <img src="image/icon_mand.svg" alt="" /><br> <p class="user"></p> 
                 </div>
                 <div class="category smallColumnDb">
-                  <img src="image/icon_mand.svg" alt="" /><br>Anonym 125 DKK
+                  <img src="image/icon_mand.svg" alt="" /><br> <p class="user"></p> 
         </section>
         <footer class="largeColumn"></footer>
       </article>
     </div>
   </body>
+<script src="app.js"></script>
+
+  <script> 
+
+    let fundraisertest = [];
+    let top3 = [];
+    let nytest = document.querySelector("#userDonation");
+    let fundraiser = [];
+     let fyn = [];
+      let jylland = [];
+      let sjaelland = [];
+      let blankets = [];
+      let cloth = [];
+      let dogBlankets = [];
+      let basket = [];
+      let toys = [];
+      let sum;
+      let fullAmount = [];
+      let moneyAmount = 0;
+      let donations = [];
+      let ormekur = [];
+      let loppekur = [];
+      let hundegodbidder = [];
+      let hundefoder = [];
+
+       db.collection("donations")
+          .get()
+          .then(snapshot => {
+            snapshot.docs.forEach(doc => {
+              donations.push(doc.data());
+            });
+            count();
+            test();
+            countTæpper();
+            countFood();
+            document.querySelector(".blanket").textContent = blankets.length + " "  +  blankets[0]
+            document.querySelector(".basket").textContent = basket.length + " "  +  basket[0]
+            document.querySelector(".toys").textContent = toys.length + " "  +  toys[0]
+            document.querySelector(".cloth").textContent = cloth.length + " "  +  cloth[0]
+            document.querySelector(".dogblankets").textContent = dogBlankets.length + " "  +  dogBlankets[0]
+
+
+             document.querySelector(".hundefoder").textContent = hundefoder.length + " "  +  hundefoder[0]
+            document.querySelector(".hundegodbidder").textContent = hundegodbidder.length + " "  +  hundegodbidder[0]
+            document.querySelector(".loppekur").textContent = loppekur.length + " "  +  loppekur[0]
+            document.querySelector(".ormekur").textContent = ormekur.length + " "  +  ormekur[0]
+
+          });
+
+          // med limits (kun 1 visning den nyeste )
+ db.collection("donations").limit(3)
+          .get()
+          .then(snapshot => {
+            snapshot.docs.forEach(doc => {
+              top3.push(doc.data());
+            });
+            nytest.children[1].children[2].textContent = "test1";
+            nytest.children[2].children[2].textContent = "test2";
+            nytest.children[3].children[2].textContent = "test3";
+          });
+          console.log(document.querySelector("#userDonation"));
+
+         
+          
+
+
+        
+        function countTæpper () {
+          donations.forEach(tæpper => {
+            
+            if (tæpper.textil == "tæpper"){
+              blankets.push(tæpper.textil);
+            }
+            else if (tæpper.textil == "tøj") {
+              cloth.push(tæpper.textil)
+            }
+            else if (tæpper.textil == "hundedækken"){
+              dogBlankets.push(tæpper.textil)
+            }
+            else if (tæpper.textil == "hundekurv") {
+              basket.push(tæpper.textil)
+            }
+            else if (tæpper.textil == "tilbehør til hunde"){
+              toys.push(tæpper.textil)
+            }
+          })
+        }
+
+         function countFood () {
+          donations.forEach(food => {
+            console.log(food.attend)
+            if (food.attend == "hundefoder"){
+              hundefoder.push(food.attend);
+            }
+            else if (food.attend == "hundegodbidder") {
+              hundegodbidder.push(food.attend)
+            }
+            else if (food.attend == "loppekur"){
+              loppekur.push(food.attend)
+            }
+            else if (food.attend == "ormekur") {
+              ormekur.push(food.attend)
+            }
+         
+          })
+        }
+
+        function count() {
+        donations.forEach(amount => {
+         if(amount.amount > 0) {
+          fullAmount.push(amount.amount);
+         }    
+        }); 
+      }
+
+      function test() {
+       fullAmount.forEach(sum => {
+         moneyAmount = moneyAmount + parseInt(fullAmount);
+       })
+       document.querySelector(".indsamlet").textContent = moneyAmount + " DKK";
+      }
+
+  </script>
 </html>

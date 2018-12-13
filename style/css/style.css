@@ -50,7 +50,7 @@ html {
     width: 100%; }
   .popUp #add-cafe-form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 50% 50%;
     height: 27vw;
     color: #6a82a0; }
     .popUp #add-cafe-form .leftForm {
