@@ -20,24 +20,43 @@ $color6: #e0ecfc;
 html {
   overflow-x: hidden;
 }
+.headerPopUp {
+  height: 11vw;
+  width: 60vw;
+  background-color: $color2;
 
+  img {
+    width: 10vw;
+    margin: 1vw 0 0 25vw;
+  }
+}
+.footerPopUp {
+  height: 8vw;
+  width: 60vw;
+  background-color: $color2;
+}
 .popUp {
   position: fixed;
-  width: 80%;
-  top: 10%;
-  left: 10%;
-  height: 80%;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  background-color: blue;
+  width: 60vw;
+  top: 2vw;
+  left: 23vw;
+  height: 41vw;
+  background-color: #fff;
   display: none;
 
   #giveDonation {
-    height: 20%;
+    height: 5vw;
     grid-column: span 2;
-    width: 80%;
+    width: 24vw;
+    border-radius: 1vw;
+    border: 0.1vw solid #fff;
     justify-self: center;
+    margin: 1.5vw 0 0 18vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 2vw;
+    background-image: url(../../image/givdonationknap.jpg);
   }
 
   .country,
@@ -48,13 +67,190 @@ html {
   #add-cafe-form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 60% 40%;
-    height: 100%;
+    height: 27vw;
 
-    .left,
-    .right {
-      justify-self: center;
-      height: 80%;
+    color: $color2;
+
+    .leftForm {
+      width: 24vw;
+      padding: 1vw 0 0 3vw;
+      border-left: 0.2vw solid;
+
+      .iconDonation {
+        width: 3vw;
+      }
+      img {
+        width: 2vw;
+      }
+    }
+    .rightForm {
+      width: 25vw;
+      padding: 1vw 0 0 3vw;
+      img {
+        width: 23.3vw;
+      }
+    }
+
+    .navnForm {
+      display: inline-block;
+      width: 10vw;
+
+      .navnW {
+        width: 9vw;
+        border: 0.1vw solid #6a82a0;
+        height: 2.3vw;
+      }
+    }
+    .efternavnForm {
+      display: inline-block;
+      width: 14vw;
+
+      .eNavnW {
+        width: 13vw;
+        border: 0.1vw solid #6a82a0;
+        height: 2.3vw;
+      }
+    }
+
+    .emailW {
+      width: 23.3vw;
+      border: 0.1vw solid $color2;
+      height: 2.3vw;
+    }
+
+    .landW {
+      width: 23.5vw;
+      padding: 0 0 0 8vw;
+      height: 2vw;
+      color: $color2;
+    }
+
+    .countryS {
+      color: $color2;
+      padding: 1vw;
+    }
+    .pengePlacering {
+      margin: 0 0 4vw 0;
+      width: 16vw;
+      padding: 0.6vw 0 0.6vw 7.3vw;
+      border: 0.1vw solid #6a82a0;
+      color: $color2;
+      font-size: 1vw;
+    }
+
+    #betalingDropdown {
+      display: none;
+    }
+    .fuldNavn {
+      width: 16vw;
+      margin: 0 0 0vw 0;
+      padding: 0.2vw 0 0.2vw 7.3vw;
+      border: 0.1vw solid #6a82a0;
+      color: #6a82a0;
+      font-size: 1vw;
+    }
+    .dato {
+      width: 3.85vw;
+      margin: 0 0.5vw 0vw 0;
+      padding: 0.2vw 0 0.2vw 7.3vw;
+      border: 0.1vw solid #6a82a0;
+      color: #6a82a0;
+      font-size: 1vw;
+    }
+    select {
+      /* styling */
+      background-color: white;
+      border: 0.1vw solid $color2;
+      display: inline-block;
+      font: inherit;
+      line-height: 1.5em;
+      padding: 0.5em 3.5em 0.5em 1em;
+
+      /* reset */
+
+      margin: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    select.minimallandW {
+      background-image: linear-gradient(45deg, transparent 50%, $color2 50%),
+        linear-gradient(135deg, $color2 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position: calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      background-repeat: no-repeat;
+      width: 23.4vw;
+      padding: 0.5vw 0 0.5vw 8vw;
+      margin: 0 0 1vw 0;
+      color: #6a82a0;
+    }
+
+    select.minimallandW:focus {
+      background-image: linear-gradient(45deg, $color2 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, $color2 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+        calc(100% - 2.5em) 0.5em;
+      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      background-repeat: no-repeat;
+      border-color: $color2;
+      outline: 0;
+    }
+
+    select.minimalTekstil {
+      background-image: linear-gradient(45deg, transparent 50%, $color2 50%),
+        linear-gradient(135deg, $color2 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position: calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      background-repeat: no-repeat;
+      width: 23.4vw;
+      padding: 0.5vw 0 0.5vw 6vw;
+      margin: 0 0 4vw 0;
+      color: #6a82a0;
+    }
+
+    select.minimalTekstil:focus {
+      background-image: linear-gradient(45deg, $color2 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, $color2 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+        calc(100% - 2.5em) 0.5em;
+      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      background-repeat: no-repeat;
+      border-color: $color2;
+      outline: 0;
+    }
+
+    select.minimalFoder {
+      background-image: linear-gradient(45deg, transparent 50%, $color2 50%),
+        linear-gradient(135deg, $color2 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position: calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      background-repeat: no-repeat;
+      width: 23.4vw;
+      padding: 0.5vw 0 0.5vw 7vw;
+      color: #6a82a0;
+    }
+
+    select.minimalFoder:focus {
+      background-image: linear-gradient(45deg, $color2 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, $color2 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+        calc(100% - 2.5em) 0.5em;
+      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      background-repeat: no-repeat;
+      border-color: $color2;
+      outline: 0;
     }
   }
 

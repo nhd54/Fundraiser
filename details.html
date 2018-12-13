@@ -33,7 +33,9 @@
         <section class="largeColumn details">
           <div id="time" class="bigColumn">
             <img src="https://via.placeholder.com/100" alt="" />
+            <p class="start"></p>
             <img src="https://via.placeholder.com/100" alt="" />
+            <p class="end"></p>
           </div>
           <div id="country" class="biggerColumn">
             <div class="map"></div>
@@ -44,7 +46,7 @@
           <div id="history" class="biggerColumn">
             <img src="https://via.placeholder.com/250" alt="" />
           </div>
-          <div id="allDonation" class="bigColumn"></div>
+          <div id="allDonation" class="bigColumn"><ul id="myList"></ul></div>
         </section>
         <footer class="largeColumn"></footer>
       </article>
@@ -52,6 +54,9 @@
     <script src="app.js"></script>
 
     <script>
+      let span = document.createElement("p");
+      let fundraiser = [];
+      let topDonations = [];
       let fyn = [];
       let jylland = [];
       let sjaelland = [];
@@ -67,6 +72,37 @@
         let headerData = await fetch("maps.html");
         let header = await headerData.text();
         document.querySelector(".map").innerHTML = header;
+
+        db.collection("fundraise")
+          .get()
+          .then(snapshot => {
+            snapshot.docs.forEach(doc => {
+              fundraiser.push(doc.data());
+            });
+            document.querySelector(".start").textContent =
+              fundraiser[0].startdate;
+            document.querySelector(".end").textContent = fundraiser[0].enddate;
+          });
+
+        // med limits (kun 7 visning den nyeste )
+        db.collection("donations")
+          .limit(7)
+          .get()
+          .then(snapshot => {
+            snapshot.docs.forEach(doc => {
+              topDonations.push(doc.data());
+            });
+            topDonations.forEach(person => {
+              console.log(person.name);
+
+              var node = document.createElement("LI");
+              var textnode = document.createTextNode(person.name);
+              node.appendChild(textnode);
+              document.getElementById("myList").appendChild(node);
+
+              document.querySelector("#allDonation").appendChild(span);
+            });
+          });
 
         db.collection("donations")
           .get()
