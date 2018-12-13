@@ -10,123 +10,157 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="popUp">
-     
-      <form id="add-cafe-form">
-          <div class="left">  <input type="text" name="name" placeholder="fornavn" />
-            <input type="text" name="lastname" placeholder="efternavn" class="lastname" />   
-            <input type="text" name="email" placeholder="din email" class="email" /> <br>
-           
-            
-            <select class="country" name="country">
-              <option value="sjælland">Sjælland</option>
-              <option value="jylland">Jylland</option>
-              <option value="fyn">Fyn</option>
-            </select></div>
-        
-        <div class="right"> 
-          <input type="text" name="amount" placeholder="penge beløb" /> <br>
-          <select  name="textil">
-              <option value="">Vælg textil & tilbehør type</option>
+      <div class="popUp">
+          <div class="headerPopUp"><img src="image/logo.svg"></div>
+          <form id="add-cafe-form">
+            <div class="rightForm">
+            <div class="navnForm">Fornavn<br><input class="navnW" type="text" name="name" placeholder="" /></div>
+            <div class="efternavnForm">Efternavn<br><input class="eNavnW" type="text" name="lastname" placeholder="" /><br></div>
+            Email<br>
+            <input class="emailW" type="text" name="email" placeholder="" /><br>
+            Landsdel<br>
+            <select name="country" class="minimallandW">
+                <option class="countryS" value="">Vælg Landsdel</option>
+              <option class="countryS" value="sjælland">Sjælland</option>
+              <option class="countryS" value="jylland">Jylland</option>
+              <option class="countryS" value="fyn">Fyn</option>
+            </select>
+          
+          <img src="image/donation1_img.jpg"></div>
+            <div class="leftForm"><img src="image/icon_penge_kategori.svg"><br><input class="pengePlacering" type="text" name="amount" placeholder="Indtast beløb i DKK" /><br>
+    
+              <div id="betalingDropdown">
+                Kortholders fulde navn<br>
+                <input class="fuldNavn" type="text" name="fuldNavn" placeholder="" />
+                Kortnummer<br>
+                <input class="fuldNavn" type="number" name="kortNummer" placeholder="" />
+                Dato CCV<br>
+                <input class="dato" type="number" name="dato" placeholder="" />
+                
+                <input class="dato" type="text" name="CCV" placeholder="" />
+              </div>
+    
+            <img class="iconDonation" src="image/icon_tekstil_kategori.svg"><select class="minimalTekstil" name="textil">
+              <option value="">Vælg Tekstil & Tilbehør</option>
               <option value="tæpper">Tæpper</option>
               <option value="tøj">Tøj</option>
               <option value="hundedækken">Hundedækken</option>
               <option value="hundekurv">Hundekurv</option>
-              <option value="tilbehør">Tilbehør</option>
-            </select>
-            <br>
-            <select  name="attend">
-                <option value="">Vælg foder & pleje</option>
-                <option value="hundefoder">Hundefoder</option>
-                <option value="hundegodbidder">Hundegodbidder</option>
-                <option value="loppekur">Loppekur</option>
-                <option value="ormekur">Ormekur</option>
-              </select></div>
-              <button id="giveDonation">GIV DONATION</button>
-            </form>
-          </div>
-         
-          
+              <option value="tilbehør til hunde">Tilbehør til hunde</option>
+            </select><br>
     
-    </div>
-    <article>
-      <section class="largeColumn" id="wallPaper">
-        <img src="image/logo.svg" alt="" />
-      </section>
-      <section class="largeColumn" id="category">
-        <div class="categories smallColumn">
-          <img class="penge" src="image/icon_penge_kategori.svg" alt="" />
-          <br />
-          <span>PENGE</span>
+            <img class="iconDonation" src="image/icon_foder_donation.svg"><select class="minimalFoder" name="pleje">
+              <option value="">Vælg Foder & Pleje</option>
+              <option value="hundefoder"> Hundefoder </option>
+              <option value="hundegodbidder">Hundegodbidder</option>
+              <option value="loppekur">Loppekur</option>
+              <option value="ormekur">Ormekur</option>
+            </select><br>
+          
+            </div>
+             <div class="footerPopUp">
+              <button id="giveDonation">GIV DONATION</button></div>
         </div>
-        <div class="categories smallColumn">
-          <img class="tekstil" src="image/icon_tekstil_kategori.svg" alt="" />
-          <br />
-          <span>TEKSTIL & TILBEHØR</span>
+          </form>
+        
+        <article>
+          <section class="largeColumn" id="wallPaper">
+            <img src="image/logo.svg" alt="" />
+          </section>
+          <section class="largeColumn" id="category">
+            <div class="categories smallColumn">
+              <img class="penge" src="image/icon_penge_kategori.svg" alt="" />
+              <br />
+              <span>PENGE</span>
+            </div>
+            <div class="categories smallColumn">
+              <img class="tekstil" src="image/icon_tekstil_kategori.svg" alt="" />
+              <br />
+              <span>TEKSTIL & TILBEHØR</span>
+            </div>
+            <div class="categories smallColumn">
+              <img class="foder" src="image/icon_foder_donation.svg" alt="" />
+              <br />
+              <span>FODER & PLEJE</span>
+            </div>
+          </section>
+          <section class="largeColumn" id="donation">
+            <div class="bigColumn" id="video">
+              <img class="video" src="image/video.jpg" alt="" />
+            </div>
+    
+            <div class="bigColumn" id="donator">
+              <button class="donation">GIV DONATION</button> <br />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi est
+                illo asperiores voluptates maiores, magni neque nesciunt veritatis
+                laborum libero saepe provident nostrum atque perspiciatis recusandae
+                corporis omnis esse illum.
+              </p>
+            </div>
+          </section>
+          <section class="largeColumn" id="donationInfo">
+            <div class="information">
+              MÅL<img src="image/icon_maal.svg" alt="" /> <p class="goal"></p>
+            </div>
+    
+            <div class="information">
+              INDSAMLET<img src="image/icon_penge.svg" alt="" /> <p class="indsamlet"></p>
+            </div>
+    
+            <div class="information">
+              SENESTE DONATION<img src="image/icon_mand.svg" alt="" />Anonym 125 DKK
+            </div>
+    
+            <div class="information">
+              TID TILBAGE<img src="image/icon_dato.svg" alt="" /> <p id="demo"></p>
+            </div>
+          </section>
+    
+          <section class="largeColumn" id="gallery">
+            <img class="imgIndex" src="image/img-04.jpg" alt="" />
+            <img class="imgIndex" src="image/img-01.jpg" alt="" />
+            <img class="imgIndex" src="image/img-02.jpg" alt="" />
+            <img class="imgIndex" src="image/img-03.jpg" alt="" />
+          </section>
+          <footer class="largeColumn">
+            <h2>GET IN TOUCH</h2>
+            <p class="mail">STØT@HUNDOGHJEMLØS.DK</p>
+            <h2>Phone <br>
+                +45 41441015</h2>
+            <div class="some">
+                <a href="#"></a><img src="image/some-01.svg"></a>
+                <a href="#"><img src="image/some-02.svg"></a>
+                <a href="#"><img src="image/some-03.svg"></a>
+            </div>
         </div>
-        <div class="categories smallColumn">
-          <img class="foder" src="image/icon_foder_donation.svg" alt="" />
-          <br />
-          <span>FODER & PLEJE</span>
-        </div>
-      </section>
-      <section class="largeColumn" id="donation">
-        <div class="bigColumn" id="video">
-          <img class="video" src="image/video.jpg" alt="" />
-        </div>
-
-        <div class="bigColumn" id="donator">
-          <button class="donation">GIV DONATION</button> <br />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi est
-            illo asperiores voluptates maiores, magni neque nesciunt veritatis
-            laborum libero saepe provident nostrum atque perspiciatis recusandae
-            corporis omnis esse illum.
-          </p>
-        </div>
-      </section>
-      <section class="largeColumn" id="donationInfo">
-        <div class="information">
-          MÅL<img src="image/icon_maal.svg" alt="" /> <p class="goal">100.000 DKK</p> 
-        </div>
-
-        <div class="information">
-          INDSAMLET<img src="image/icon_penge.svg" alt="" /><p class="indsamlet"></p>
-        </div>
-
-        <div class="information">
-          SENESTE DONATION<img src="image/icon_mand.svg" alt="" />Anonym 125 DKK
-        </div>
-
-        <div class="information">
-          TID TILBAGE<img src="image/icon_dato.svg" alt="" /> <p id="demo"></p> 
-        </div>
-      </section>
-
-      <section class="largeColumn" id="gallery">
-        <img class="imgIndex" src="image/img-04.jpg" alt="" />
-        <img class="imgIndex" src="image/img-01.jpg" alt="" />
-        <img class="imgIndex" src="image/img-02.jpg" alt="" />
-        <img class="imgIndex" src="image/img-03.jpg" alt="" />
-      </section>
-      <footer class="largeColumn">
-        <h2>GET IN TOUCH</h2>
-        <p class="mail">STØT@HUNDOGHJEMLØS.DK</p>
-        <h2>Phone <br>
-            +45 41441015</h2>
-        <div class="some">
-            <a href="#"></a><img src="image/some-01.svg"></a>
-            <a href="#"><img src="image/some-02.svg"></a>
-            <a href="#"><img src="image/some-03.svg"></a>
-        </div>
-    </div>
-      </footer>
-    </article>
+          </footer>
+        </article>
   </body>
 
   <script src="app.js"></script>
 
   <script>
+
+    var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+
+if(dd<10) {
+    dd = '0'+dd
+} 
+
+if(mm<10) {
+    mm = '0'+mm
+} 
+
+today = dd + '-' + mm + '-' + yyyy;
+console.log(today); 
+
+
+
+
     let fundraisertest = [];
     let fundraiser = [];
      let fyn = [];
@@ -194,14 +228,17 @@ db.collection("fundraise")
     form.addEventListener("submit", e => {  e.preventDefault();
 
       document.querySelector("#giveDonation").addEventListener("click", () => {
+       
+        
         db.collection("donations").add({
           firstname: form.name.value,
           lastname: form.lastname.value,
           email: form.email.value,
           country: form.country.value,
           amount: form.amount.value,
-          attend: form.attend.value,
-          textil: form.textil.value
+          attend: form.pleje.value,
+          textil: form.textil.value,
+          date: today
         });
 
         form.name.value = "";
