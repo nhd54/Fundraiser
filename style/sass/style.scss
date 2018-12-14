@@ -20,6 +20,24 @@ $color6: #e0ecfc;
 html {
   overflow-x: hidden;
 }
+
+#login {
+  background-color: $color1;
+  .wrapper {
+    display: grid;
+    height: 50vh;
+    width: 50vw;
+    margin: 20vh auto;
+    background-color: $color1;
+
+    img {
+      width: 20%;
+      margin-top: 20px;
+      justify-self: center;
+    }
+  }
+}
+
 .headerPopUp {
   height: 11vw;
   width: 60vw;
