@@ -61,11 +61,35 @@ html {
   .popUp .country,
   .popUp .email {
     width: 100%; }
+  .popUp .done {
+    display: none;
+    grid-template-columns: repeat(2, 1fr); }
+    .popUp .done h2,
+    .popUp .done span {
+      grid-column: span 2;
+      justify-self: center; }
+    .popUp .done img {
+      width: 50%;
+      justify-self: center;
+      grid-column: span 2; }
+    .popUp .done .buttons {
+      grid-column: span 2;
+      justify-self: center;
+      justify-items: center;
+      width: 52%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); }
+    .popUp .done button {
+      height: 7vh;
+      width: 90%;
+      margin-top: 20px; }
   .popUp #add-cafe-form {
     display: grid;
     grid-template-columns: 50% 50%;
     height: 27vw;
     color: #6a82a0; }
+    .popUp #add-cafe-form .hidden {
+      display: none; }
     .popUp #add-cafe-form .leftForm {
       width: 24vw;
       padding: 1vw 0 0 3vw;
@@ -505,3 +529,6 @@ article {
       height: 10vw;
       min-height: 0;
       background-color: #6a82a0; }
+
+.display {
+  display: grid; }

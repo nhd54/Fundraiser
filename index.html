@@ -60,8 +60,21 @@
             </div>
              <div class="footerPopUp">
               <button id="giveDonation">GIV DONATION</button></div>
+            </form>
+
+            <div class="done">
+              <h2>et kæmpe tak for din donation</h2>
+              <span>du gør en forskel</span>
+              <img src="image/tak_img.jpg" alt="">
+              <div class="buttons">
+                  <button>Del på instagram</button>
+                  <button>Del på facebook</button>
+              </div>
+              
+              
+            </div>
         </div>
-          </form>
+         
         
         <article>
           <section class="largeColumn" id="wallPaper">
@@ -241,11 +254,11 @@ db.collection("fundraise")
           date: today
         });
 
-        form.name.value = "";
-        form.lastname.value = "";
-        form.email.value = "";
-        form.country.value = "";
-        form.amount.value = "";
+        
+
+        
+        document.querySelector("#add-cafe-form").style.display = "none";
+        document.querySelector(".done").style.display = "grid";
       });
     });
 
