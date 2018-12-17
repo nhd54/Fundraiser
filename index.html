@@ -11,7 +11,9 @@
   </head>
   <body>
       <div class="popUp">
-          <div class="headerPopUp"><img src="image/logo.svg"></div>
+          <div class="headerPopUp"><img src="image/logo.svg">
+          <button class="close">luk vindue</button>
+          </div>
           <form id="add-cafe-form">
             <div class="rightForm">
             <div class="navnForm">Fornavn<br><input class="navnW" type="text" name="name" placeholder="" /></div>
@@ -195,7 +197,24 @@ console.log(today);
             });
             count();
             test();
-           
+            setInterval(function(){ 
+
+
+              if(form.amount.value.length > 0) {
+                
+                document.querySelector("#betalingDropdown").style.display = "block";
+              }
+              else {
+                document.querySelector("#betalingDropdown").style.display = "none";
+              }
+
+             }, 100);
+
+
+
+             document.querySelector(".close").addEventListener("click", () => {
+               document.querySelector(".popUp").style.display = "none";
+             })
           });
 
 
@@ -261,7 +280,14 @@ db.collection("fundraise")
         document.querySelector(".done").style.display = "grid";
       });
     });
+   
 
+    function showPayment () {
+      
+      if (form.amount.value = "11"){
+        console.log("test test test");
+      }
+    } 
 
 
 
