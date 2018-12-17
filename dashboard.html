@@ -63,26 +63,36 @@
 
   <script> 
 
-    let fundraisertest = [];
-    let top3 = [];
-    let nytest = document.querySelector("#userDonation");
-    let fundraiser = [];
-     let fyn = [];
-      let jylland = [];
-      let sjaelland = [];
-      let blankets = [];
-      let cloth = [];
-      let dogBlankets = [];
-      let basket = [];
-      let toys = [];
-      let sum;
-      let fullAmount = [];
-      let moneyAmount = 0;
-      let donations = [];
-      let ormekur = [];
-      let loppekur = [];
-      let hundegodbidder = [];
-      let hundefoder = [];
+       let fundraisertest = [];
+       let top3 = [];
+       let nytest = document.querySelector("#userDonation");
+       let fundraiser = [];
+       let fyn = [];
+       let jylland = [];
+       let sjaelland = [];
+       let blankets = [];
+       let cloth = [];
+       let dogBlankets = [];
+       let basket = [];
+       let toys = [];
+       let sum;
+       let fullAmount = [];
+       let moneyAmount = 0;
+       let donations = [];
+       let ormekur = [];
+       let loppekur = [];
+       let hundegodbidder = [];
+       let hundefoder = [];
+       let week1 = []
+       let week2 = []
+       let week3 = []
+       let week4 = []
+       let week5 = []
+       let week6 = []
+       let week7 = []
+       let week8 = []
+       let week9 = []
+       let week10 = []
 
        db.collection("donations")
           .get()
@@ -165,6 +175,8 @@
          
           })
         }
+
+
 
         function count() {
         donations.forEach(amount => {
