@@ -12,17 +12,44 @@ html {
   overflow-x: hidden; }
 
 #login {
-  background-color: #242f41; }
+  background-color: #fff; }
   #login .wrapper {
     display: grid;
     height: 50vh;
     width: 50vw;
-    margin: 20vh auto;
-    background-color: #242f41; }
+    margin: 0 auto;
+    background-color: #fff; }
+    #login .wrapper .loginBox {
+      width: 33vw;
+      display: grid;
+      margin: 5vw;
+      padding: 0px 0 4vw 7vw;
+      background-color: #242f41; }
+    #login .wrapper h2 {
+      color: #fff;
+      font-size: 1.2vw;
+      text-align: left; }
+    #login .wrapper p {
+      color: #fff;
+      font-size: 0.9vw;
+      display: inline-block; }
     #login .wrapper img {
-      width: 20%;
-      margin-top: 20px;
-      justify-self: center; }
+      width: 15vw;
+      margin: 1vw 0 0 6vw; }
+    #login .wrapper .pengePlacering {
+      width: 26vw;
+      height: 3vw;
+      font-size: 1vw; }
+    #login .wrapper button {
+      width: 11vw;
+      height: 2.4vw;
+      font-size: 1.2vw;
+      color: #fff;
+      margin: 0 0.5vw 0 0;
+      background-color: #242f41;
+      border: 0.1vw solid #fff; }
+    #login .wrapper .bottomLogin {
+      width: 40vw; }
 
 .headerPopUp {
   height: 11vw;
@@ -42,7 +69,7 @@ html {
   width: 60vw;
   top: 2vw;
   left: 23vw;
-  height: 41vw;
+  height: 43vw;
   background-color: #fff;
   display: none; }
   .popUp #giveDonation {
@@ -67,7 +94,8 @@ html {
     .popUp .done h2,
     .popUp .done span {
       grid-column: span 2;
-      justify-self: center; }
+      justify-self: center;
+      color: #6a82a0; }
     .popUp .done img {
       width: 50%;
       justify-self: center;
@@ -79,10 +107,29 @@ html {
       width: 52%;
       display: grid;
       grid-template-columns: repeat(2, 1fr); }
-    .popUp .done button {
+      .popUp .done .buttons img {
+        width: 2vw;
+        margin: 0 1vw 0 0; }
+      .popUp .done .buttons .positionSome {
+        display: inline-block; }
+    .popUp .done .insta {
       height: 7vh;
-      width: 90%;
-      margin-top: 20px; }
+      width: 15vw;
+      border-radius: 1vw;
+      color: #fff;
+      margin-top: 1vw;
+      background-color: #22042d;
+      text-align: left;
+      padding: 0 0 0 3.3vw; }
+    .popUp .done .fB {
+      height: 7vh;
+      width: 15vw;
+      border-radius: 1vw;
+      color: #fff;
+      margin-top: 1vw;
+      background-color: #3b589e;
+      text-align: left;
+      padding: 0 0 0 3.2vw; }
   .popUp #add-cafe-form {
     display: grid;
     grid-template-columns: 50% 50%;
