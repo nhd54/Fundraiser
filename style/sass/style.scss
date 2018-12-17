@@ -86,27 +86,39 @@ html {
   }
 }
 .footerPopUp {
-  height: 8vw;
+  height: 6vw;
   width: 60vw;
   background-color: $color2;
 }
 .popUp {
   position: fixed;
   width: 60vw;
-  top: 2vw;
-  left: 23vw;
-  height: 43vw;
+  left: 19vw;
+  height: 46vw;
   background-color: #fff;
   display: none;
 
+  .close {
+    width: 8vw;
+    position: absolute;
+    top: 1vw;
+    left: 61vw;
+    height: 2vw;
+    font-size: 1vw;
+    color: #242f41;
+    margin: 0 6vw 0 0;
+    background-color: #e0ecfc;
+    border: 0.1vw solid #242f41;
+  }
   #giveDonation {
-    height: 5vw;
+    height: 4vw;
     grid-column: span 2;
-    width: 24vw;
+    width: 22vw;
     border-radius: 1vw;
     border: 0.1vw solid #fff;
     justify-self: center;
-    margin: 1.5vw 0 0 18vw;
+    margin: 1vw 0 0 18vw;
+
     background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
@@ -120,11 +132,14 @@ html {
   }
   .done {
     display: none;
+    height: 32vw;
     grid-template-columns: repeat(2, 1fr);
+    margin: 2vw 0 0 0;
 
     h2,
     span {
       grid-column: span 2;
+      font-size: 2.2vw;
       justify-self: center;
       color: $color2;
     }
@@ -133,12 +148,14 @@ html {
       width: 50%;
       justify-self: center;
       grid-column: span 2;
+      margin: 2vw 0 2vw 0;
     }
     .buttons {
       grid-column: span 2;
       justify-self: center;
       justify-items: center;
-      width: 52%;
+      width: 31vw;
+      font-size: 1vw;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
 
@@ -157,6 +174,7 @@ html {
       width: 15vw;
       border-radius: 1vw;
       color: #fff;
+      font-size: 1vw;
       margin-top: 1vw;
       background-color: #22042d;
       text-align: left;
@@ -167,6 +185,7 @@ html {
       height: 7vh;
       width: 15vw;
       border-radius: 1vw;
+      font-size: 1vw;
       color: #fff;
       margin-top: 1vw;
       background-color: #3b589e;
@@ -177,8 +196,9 @@ html {
 
   #add-cafe-form {
     display: grid;
-    grid-template-columns: 50% 50%;
-    height: 27vw;
+    font-size: 1.2vw;
+    grid-template-columns: 30vw 30vw;
+    height: 40vw;
     color: $color2;
 
     .hidden {
@@ -193,7 +213,7 @@ html {
       .iconDonation {
         width: 3vw;
       }
-      img {
+      .img {
         width: 2vw;
       }
     }
@@ -244,32 +264,30 @@ html {
       padding: 1vw;
     }
     .pengePlacering {
-      margin: 0 0 4vw 0;
-      width: 16vw;
-      padding: 0.6vw 0 0.6vw 7.3vw;
+      width: 22vw;
+      padding: 0.6vw 0 0.6vw 1vw;
       border: 0.1vw solid #6a82a0;
       color: $color2;
       font-size: 1vw;
     }
-
+    .kort {
+      width: 23vw;
+      margin: 1vw 0 0vw 0;
+    }
     #betalingDropdown {
       display: none;
+      font-size: 0.8vw;
+      margin: 0 0 0.5vw 0;
     }
     .fuldNavn {
-      width: 16vw;
-      margin: 0 0 0vw 0;
-      padding: 0.2vw 0 0.2vw 7.3vw;
+      width: 23vw;
       border: 0.1vw solid #6a82a0;
       color: #6a82a0;
-      font-size: 1vw;
     }
     .dato {
-      width: 3.85vw;
-      margin: 0 0.5vw 0vw 0;
-      padding: 0.2vw 0 0.2vw 7.3vw;
+      width: 11.2vw;
       border: 0.1vw solid #6a82a0;
       color: #6a82a0;
-      font-size: 1vw;
     }
     select {
       /* styling */
@@ -294,9 +312,9 @@ html {
       background-image: linear-gradient(45deg, transparent 50%, $color2 50%),
         linear-gradient(135deg, $color2 50%, transparent 50%),
         linear-gradient(to right, #ccc, #ccc);
-      background-position: calc(100% - 20px) calc(1em + 2px),
-        calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      background-position: calc(100% - 1.74vw) calc(1.2vw + 0vw),
+        calc(100% - 1.3vw) calc(1.2vw + 0vw), calc(100% - 2.5em) 0.5vw;
+      background-size: 0.5vw 0.5vw, 0.5vw 0.5vw, 0.1vw 1.5em;
       background-repeat: no-repeat;
       width: 23.4vw;
       padding: 0.5vw 0 0.5vw 8vw;
@@ -320,13 +338,13 @@ html {
       background-image: linear-gradient(45deg, transparent 50%, $color2 50%),
         linear-gradient(135deg, $color2 50%, transparent 50%),
         linear-gradient(to right, #ccc, #ccc);
-      background-position: calc(100% - 20px) calc(1em + 2px),
-        calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      background-position: calc(100% - 1.74vw) calc(1.2vw + 0vw),
+        calc(100% - 1.3vw) calc(1.2vw + 0vw), calc(100% - 2.5em) 0.5vw;
+      background-size: 0.5vw 0.5vw, 0.5vw 0.5vw, 0.1vw 1.5em;
       background-repeat: no-repeat;
       width: 23.4vw;
       padding: 0.5vw 0 0.5vw 6vw;
-      margin: 0 0 4vw 0;
+      margin: 0 0 2vw 0;
       color: #6a82a0;
     }
 
@@ -346,9 +364,9 @@ html {
       background-image: linear-gradient(45deg, transparent 50%, $color2 50%),
         linear-gradient(135deg, $color2 50%, transparent 50%),
         linear-gradient(to right, #ccc, #ccc);
-      background-position: calc(100% - 20px) calc(1em + 2px),
-        calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      background-position: calc(100% - 1.74vw) calc(1.2vw + 0vw),
+        calc(100% - 1.3vw) calc(1.2vw + 0vw), calc(100% - 2.5em) 0.5vw;
+      background-size: 0.5vw 0.5vw, 0.5vw 0.5vw, 0.1vw 1.5em;
       background-repeat: no-repeat;
       width: 23.4vw;
       padding: 0.5vw 0 0.5vw 7vw;
@@ -467,7 +485,7 @@ article {
     button {
       width: 31vw;
       height: 6vw;
-      font-size: 2em;
+      font-size: 3vw;
       margin: 6vw 0 0 0vw;
       color: #fff;
       background-color: #6a82a0;
@@ -480,6 +498,7 @@ article {
 
     p {
       text-align: center;
+      font-size: 1vw;
     }
   }
 
@@ -505,7 +524,6 @@ article {
   }
 
   #gallery {
-    min-height: 30vh;
     grid-template-columns: repeat(4, 1fr);
 
     .imgIndex {
@@ -556,7 +574,7 @@ article {
 
   header {
     background-color: $color2;
-    height: 25vh;
+    height: 15vw;
     grid-template-columns: 5vw 0vw 2vw 20vw;
     align-items: center;
     img {
@@ -576,7 +594,7 @@ article {
 
   nav {
     grid-column: span 1;
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
     justify-items: center;
     background-color: $color1;
@@ -621,13 +639,13 @@ article {
     margin: 0 0 0 20vw;
 
     height: 75vw;
-    grid-template-rows: 25vh auto auto 15vh;
+    grid-template-rows: 14vw auto auto 12vw;
 
     .donated {
-      grid-template-rows: 2vw 15vw;
       border-bottom: 2px solid $color2;
       color: $color2;
-      margin: 1vw 0 0 0;
+      margin: 4vw 0 0 0;
+      font-size: 1vw;
 
       img {
         width: 11vw;
@@ -822,4 +840,786 @@ article {
 
 .display {
   display: grid;
+}
+
+@media only screen and (max-width: 700px) {
+  article #donation p {
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .headerPopUp {
+    height: 30vw;
+    width: 80vw;
+    background-color: $color2;
+
+    img {
+      width: 31vw;
+      margin: 1vw 0 0 25vw;
+    }
+  }
+  .footerPopUp {
+    height: 40vw;
+    width: 80vw;
+    background-color: $color2;
+  }
+  .popUp {
+    position: fixed;
+    width: 80vw;
+    left: 8vw;
+    height: 100%;
+    background-color: #fff;
+    display: none;
+
+    .close {
+      width: 15vw;
+      position: absolute;
+      top: 1vw;
+      left: 61vw;
+      height: 5vw;
+      font-size: 2vw;
+      color: #242f41;
+      margin: 0 6vw 0 0;
+      background-color: #e0ecfc;
+      border: 0.1vw solid #242f41;
+    }
+    #giveDonation {
+      height: 12vw;
+      grid-column: span 2;
+      width: 56vw;
+      border-radius: 1vw;
+      border: 0.5vw solid #fff;
+      justify-self: center;
+      margin: 4vw 0 0 12vw;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #fff;
+      font-size: 5vw;
+      background-image: url(../../image/givdonationknap.jpg);
+    }
+
+    .country,
+    .email {
+      width: 100%;
+    }
+    .done {
+      display: none;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 2vw 0 0 0;
+
+      h2,
+      span {
+        grid-column: span 2;
+        text-align: center;
+        font-size: 4.2vw;
+        justify-self: center;
+        color: $color2;
+      }
+
+      img {
+        width: 70vw;
+        justify-self: center;
+        grid-column: span 2;
+        margin: 2vw 0 2vw 0;
+      }
+      .buttons {
+        grid-column: span 2;
+        justify-self: center;
+        justify-items: center;
+        width: 80vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        img {
+          width: 7vw;
+          margin: 0 1vw 0 0;
+        }
+
+        .positionSome {
+          display: inline-block;
+        }
+      }
+
+      .insta {
+        height: 7vh;
+        width: 30vw;
+        font-size: 3vw;
+        border-radius: 1vw;
+        color: #fff;
+        margin-top: 1vw;
+        background-color: #22042d;
+        text-align: left;
+        padding: 0 0 0 3.3vw;
+      }
+
+      .fB {
+        height: 7vh;
+        width: 30vw;
+        font-size: 3vw;
+        border-radius: 1vw;
+        color: #fff;
+        margin-top: 1vw;
+        background-color: #3b589e;
+        text-align: left;
+        padding: 0 0 0 3.2vw;
+      }
+    }
+
+    #add-cafe-form {
+      display: grid;
+      grid-template-columns: 100%;
+      height: 100%;
+      color: $color2;
+
+      .hidden {
+        display: none;
+      }
+
+      .leftForm {
+        font-size: 3vw;
+        width: 80vw;
+        /* height: 100%; */
+        padding: 47vw 0 0 3vw;
+        border-left: none;
+
+        .iconDonation {
+          width: 15vw;
+        }
+        .img {
+          width: 10vw;
+        }
+      }
+      .rightForm {
+        width: 80vw;
+        padding: 1vw 0 0 3vw;
+        height: 0vw;
+        font-size: 3vw;
+        img {
+          width: 23.3vw;
+          display: none;
+        }
+      }
+
+      .navnForm {
+        display: inline-block;
+        width: 73vw;
+
+        .navnW {
+          width: 73vw;
+          border: 0.1vw solid #6a82a0;
+          height: 7vw;
+        }
+      }
+      .efternavnForm {
+        display: inline-block;
+        width: 73vw;
+
+        .eNavnW {
+          width: 73vw;
+          border: 0.1vw solid #6a82a0;
+          height: 7vw;
+        }
+      }
+
+      .emailW {
+        width: 73vw;
+        border: 0.1vw solid $color2;
+        height: 7vw;
+      }
+
+      .landW {
+        width: 73vw;
+        padding: 0 0 0 8vw;
+        height: 2vw;
+        color: $color2;
+      }
+
+      .countryS {
+        color: $color2;
+        padding: 1vw;
+      }
+      .pengePlacering {
+        width: 70vw;
+        height: 8vw;
+        padding: 0vw 0 0vw 2vw;
+        border: 0.1vw solid #6a82a0;
+        color: #6a82a0;
+        font-size: 3vw;
+      }
+      .kort {
+        width: 72vw;
+        margin: 1vw 4vw 0vw 0;
+      }
+      #betalingDropdown {
+        display: none;
+        font-size: 2.8vw;
+        width: 72vw;
+        margin: 0 0 0.5vw 0;
+      }
+      .fuldNavn {
+        width: 70vw;
+        border: 0.1vw solid #6a82a0;
+        color: #6a82a0;
+      }
+      .dato {
+        width: 34.8vw;
+        border: 0.1vw solid #6a82a0;
+        color: #6a82a0;
+      }
+
+      select {
+        /* styling */
+        background-color: white;
+        border: 0.1vw solid $color2;
+        display: inline-block;
+        font: inherit;
+        line-height: 1.5em;
+        padding: 0.5em 3.5em 0.5em 1em;
+
+        /* reset */
+
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+
+      select.minimallandW {
+        background-image: linear-gradient(45deg, transparent 50%, $color2 50%),
+          linear-gradient(135deg, $color2 50%, transparent 50%),
+          linear-gradient(to right, #ccc, #ccc);
+        background-position: calc(100% - 20px) calc(1em + 2px),
+          calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+        background-size: 5px 5px, 5px 5px, 1px 1.5em;
+        background-repeat: no-repeat;
+        width: 73vw;
+        padding: 0.5vw 0 0.5vw 8vw;
+        margin: 0 0 5vw 0;
+        color: #6a82a0;
+      }
+
+      select.minimallandW:focus {
+        background-image: linear-gradient(45deg, $color2 50%, transparent 50%),
+          linear-gradient(135deg, transparent 50%, $color2 50%),
+          linear-gradient(to right, #ccc, #ccc);
+        background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+          calc(100% - 2.5em) 0.5em;
+        background-size: 5px 5px, 5px 5px, 1px 1.5em;
+        background-repeat: no-repeat;
+        border-color: $color2;
+        outline: 0;
+      }
+
+      select.minimalTekstil {
+        background-image: linear-gradient(45deg, transparent 50%, $color2 50%),
+          linear-gradient(135deg, $color2 50%, transparent 50%),
+          linear-gradient(to right, #ccc, #ccc);
+        background-position: calc(100% - 20px) calc(1em + 2px),
+          calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+        background-size: 5px 5px, 5px 5px, 1px 1.5em;
+        background-repeat: no-repeat;
+        width: 73vw;
+        padding: 0.5vw 0 0.5vw 6vw;
+        margin: 0 0 5vw 0;
+        color: #6a82a0;
+      }
+
+      select.minimalTekstil:focus {
+        background-image: linear-gradient(45deg, $color2 50%, transparent 50%),
+          linear-gradient(135deg, transparent 50%, $color2 50%),
+          linear-gradient(to right, #ccc, #ccc);
+        background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+          calc(100% - 2.5em) 0.5em;
+        background-size: 5px 5px, 5px 5px, 1px 1.5em;
+        background-repeat: no-repeat;
+        border-color: $color2;
+        outline: 0;
+      }
+
+      select.minimalFoder {
+        background-image: linear-gradient(45deg, transparent 50%, $color2 50%),
+          linear-gradient(135deg, $color2 50%, transparent 50%),
+          linear-gradient(to right, #ccc, #ccc);
+        background-position: calc(100% - 20px) calc(1em + 2px),
+          calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+        background-size: 5px 5px, 5px 5px, 1px 1.5em;
+        background-repeat: no-repeat;
+        width: 73vw;
+        padding: 0.5vw 0 0.5vw 7vw;
+        color: #6a82a0;
+      }
+
+      select.minimalFoder:focus {
+        background-image: linear-gradient(45deg, $color2 50%, transparent 50%),
+          linear-gradient(135deg, transparent 50%, $color2 50%),
+          linear-gradient(to right, #ccc, #ccc);
+        background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+          calc(100% - 2.5em) 0.5em;
+        background-size: 5px 5px, 5px 5px, 1px 1.5em;
+        background-repeat: no-repeat;
+        border-color: $color2;
+        outline: 0;
+      }
+    }
+  }
+  article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+
+    .largeColumn {
+      grid-column: span 10;
+      display: grid;
+    }
+    .biggerColumn {
+      grid-column: span 7;
+    }
+
+    .halfColumn {
+      grid-column: span 6;
+    }
+    .bigColumn {
+      grid-column: span 5;
+    }
+
+    .smallColumn {
+      grid-column: span 2;
+      width: 37vw;
+      margin: 0 0 0 0;
+    }
+
+    .smallColumnDb {
+      grid-column: span 1;
+      width: 33vw;
+      text-align: center;
+      margin: 6vw 0 0 0vw;
+    }
+
+    #wallPaper {
+      justify-items: center;
+      align-items: center;
+      height: 30vw;
+      background-color: $color1;
+      background-image: url(../../image/header-01.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      img {
+        width: 25vw;
+      }
+    }
+
+    #category {
+      height: 35vw;
+      grid-template-columns: repeat(6, 1fr);
+      display: grid;
+      /* justify-items: center; */
+      /* align-items: center; */
+      text-align: center;
+      color: #6a82a0;
+      font-size: 3.5vw;
+
+      .penge {
+        width: 17vw;
+      }
+      .tekstil {
+        width: 30vw;
+      }
+      .foder {
+        width: 27vw;
+      }
+    }
+
+    #donation {
+      height: 100%;
+      padding: 0px 0 4vw 0;
+      grid-template-columns: repeat(1, 1fr);
+      display: grid;
+      background-color: $color5;
+
+      #video {
+        justify-items: center;
+        align-items: center;
+        display: grid;
+      }
+
+      .video {
+        width: 80vw;
+        margin: 4vw 0 4vw 0;
+      }
+      .bigColumn:first-child {
+        grid-column: 1 / span 1;
+      }
+      .bigColumn:last-child {
+        grid-column: 1 / span 1;
+      }
+
+      #donator {
+        justify-items: center;
+        align-items: center;
+        display: grid;
+        margin: 0 0 0 8vw;
+        width: 85vw;
+      }
+
+      button {
+        width: 80vw;
+        height: 18vw;
+        font-size: 7vw;
+        margin: 0;
+        color: #fff;
+        background-color: #6a82a0;
+        border-radius: 1.5vw;
+        border: 0.5vw solid #fff;
+        background-image: url(../../image/givdonationknap.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      p {
+        text-align: center;
+        font-size: 4vw;
+      }
+    }
+    #donationInfo {
+      height: 100%;
+      padding: 8vw 0 20vw 0;
+      margin: 0vw 0 0 5vw;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column: 1 / span 10;
+      color: $color2;
+
+      .information {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        width: 42vw;
+        font-size: 4.3vw;
+        height: 40vw;
+      }
+
+      img {
+        width: 30vw;
+      }
+    }
+
+    #gallery {
+      grid-template-columns: repeat(2, 1fr);
+
+      .imgIndex {
+        width: 50vw;
+      }
+    }
+
+    footerIndex {
+      justify-items: center;
+      align-items: center;
+      background-image: url(../../image/footer.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #fff;
+      height: 50vw;
+      text-align: center;
+      padding: 3.5vw 0 0 0;
+
+      .some {
+        width: 27vw;
+        margin: 0.5vw 0 0.5vw 0;
+        margin: 0.5vw 0 0.5vw 0;
+      }
+
+      h2 {
+        font-size: 4.2vw;
+      }
+      .mail {
+        font-weight: 100;
+        font-size: 6vw;
+        margin: 2vw 0 2vw 0;
+      }
+
+      img {
+        width: 8vw;
+      }
+    }
+  }
+
+  #wrapper {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 100vw;
+
+    h1 {
+      justify-self: center;
+    }
+
+    header {
+      background-color: $color2;
+      height: 15vw;
+
+      align-items: center;
+      img {
+        grid-column: 2 / span 1;
+        width: 4.5vw;
+      }
+
+      h1 {
+        color: white;
+        font-size: 2vw;
+        font-weight: 100;
+      }
+      .headerImg {
+        width: 100vw;
+      }
+    }
+
+    nav {
+      grid-column: span 1;
+      height: 30vw;
+      display: grid;
+      justify-items: center;
+      background-color: $color1;
+
+      position: relative;
+      width: 100vw;
+
+      img {
+        width: 29vw;
+        margin: 1vw 0 0 0;
+      }
+
+      .menu {
+        list-style-type: none;
+        justify-self: center;
+        position: fixed;
+        width: 19vw;
+        top: 0vw;
+        left: 2vw;
+        font-size: 1.5vw;
+
+        li {
+          margin: 2vw 0 0 1vw;
+          height: 3vw;
+
+          img {
+            width: 2vw;
+          }
+
+          a {
+            text-decoration: none;
+            color: white;
+            justify-items: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+    #dashboard {
+      grid-column: span 1;
+      width: 100vw;
+      margin: 0vw 0 0 0vw;
+      grid-template-rows: 20vw 65vw 48vw;
+
+      .donated {
+        grid-template-rows: 2vw 15vw;
+        border-bottom: 2px solid $color2;
+        color: $color2;
+        font-size: 3vw;
+        margin: 1vw 0 0 0;
+
+        img {
+          width: 28vw;
+        }
+
+        .pengeDb {
+          width: 20vw;
+        }
+      }
+      h3 {
+        color: $color2;
+        display: inline-block;
+        margin: 0.7vw 0vw 0 2.5vw;
+      }
+      .settings {
+        grid-row: span 1;
+        display: grid;
+        grid-template-rows: auto auto;
+
+        button {
+          width: 20vw;
+          height: 4vw;
+          font-size: 1.4vw;
+          color: #242f41;
+          margin: 0 6vw 0 0;
+          background-color: #e0ecfc;
+          border: 0.1vw solid #242f41;
+        }
+        #profile {
+          min-height: 40vh;
+          width: 38vw;
+          padding: 0 0 1vw 0;
+          border-right: 2px solid $color2;
+          border-bottom: 2px solid $color2;
+
+          .bottomPos {
+            margin: 2vw 0 0 3vw;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: flex-end;
+          }
+
+          img {
+            width: 5vw;
+          }
+        }
+
+        #fundraise {
+          min-height: 30vh;
+          width: 38vw;
+          padding: 2vw 0 0 0;
+          border-right: 2px solid $color2;
+
+          .bottomPos {
+            margin: 2vw 0 0 3vw;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: flex-end;
+          }
+        }
+
+        #goals {
+          min-height: 50vh;
+          border-top: 2px solid $color2;
+          display: grid;
+          padding: 0 0 1vw 1vw;
+          width: 41vw;
+          grid-template-columns: repeat(2, 1fr);
+          color: $color2;
+
+          img {
+            width: 8vw;
+          }
+
+          .information {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            width: 16vw;
+            font-size: 1.3vw;
+            height: 14vw;
+          }
+          .bottomPos {
+            width: 20vw;
+            height: 4vw;
+            font-size: 1.4vw;
+            color: #242f41;
+            grid-column: span 2;
+            margin: 0 6vw 0 2vw;
+            background-color: #e0ecfc;
+          }
+        }
+
+        #categories {
+          min-height: 30vh;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          margin: 1vw;
+
+          .bottomPos {
+            width: 20vw;
+            height: 4vw;
+            font-size: 1.4vw;
+            color: #242f41;
+            grid-column: span 3;
+            margin: 0 6vw 0 2vw;
+            background-color: #e0ecfc;
+          }
+
+          .penge {
+            width: 7vw;
+          }
+          .tekstil {
+            width: 12vw;
+          }
+          .foder {
+            width: 10.9vw;
+          }
+          .settingsAvatar {
+            width: 5vw;
+            display: inline-block;
+          }
+
+          .dashboardKategori {
+            width: 20vw;
+            height: 4vw;
+            font-size: 1.4vw;
+            color: #242f41;
+            grid-column: span 3;
+            margin: 0 6vw 0 0;
+            background-color: #e0ecfc;
+            border: 0.1vw solid #242f41;
+          }
+
+          .smallColumnSettings {
+            color: #6a82a0;
+            text-align: center;
+            margin: 1vw;
+          }
+        }
+      }
+
+      .details {
+        grid-template-columns: repeat(12, 1fr);
+
+        #time {
+          display: grid;
+          grid-template-rows: repeat(2, 50%);
+          justify-items: center;
+          align-items: center;
+          border-right: 2px solid $color2;
+        }
+
+        #history {
+          border-right: 2px solid $color2;
+        }
+
+        #country {
+          display: grid;
+
+          .mapInfo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+          }
+        }
+
+        #history {
+          display: grid;
+          justify-items: center;
+          align-items: center;
+        }
+
+        #history,
+        #allDonation {
+          border-top: 2px solid $color2;
+        }
+      }
+
+      .category {
+        justify-items: center;
+        align-items: center;
+      }
+
+      footer {
+        height: 10vw;
+        min-height: 0;
+        background-color: $color2;
+      }
+    }
+  }
+
+  .display {
+    display: grid;
+  }
 }
