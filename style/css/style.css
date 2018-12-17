@@ -11,6 +11,11 @@
 html {
   overflow-x: hidden; }
 
+.testHeight {
+  width: 50px;
+  height: 50px;
+  background-color: green; }
+
 #login {
   background-color: #242f41; }
   #login .wrapper {

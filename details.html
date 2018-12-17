@@ -44,7 +44,7 @@
         </section>
         <section class="largeColumn details">
           <div id="history" class="biggerColumn">
-            <img src="https://via.placeholder.com/250" alt="" />
+            <div class="testHeight"></div>
           </div>
           <div id="allDonation" class="bigColumn"><ul id="myList"></ul></div>
         </section>
@@ -65,6 +65,16 @@
       let countFyn = document.querySelector(".mapInfo span:nth-child(2)");
       let countsjaelland = document.querySelector("#country span:nth-child(3)");
       let countJylland = document.querySelector("#country span:nth-child(1)");
+      let week1 = [];
+      let week2 = [];
+      let week3 = [];
+      let week4 = [];
+      let week5 = [];
+      let week6 = [];
+      let week7 = [];
+      let week8 = [];
+      let week9 = [];
+      let week10 = [];
 
       document.addEventListener("DOMContentLoaded", init);
 
@@ -93,8 +103,6 @@
               topDonations.push(doc.data());
             });
             topDonations.forEach(person => {
-              console.log(person.name);
-
               var node = document.createElement("LI");
               var textnode = document.createTextNode(person.name);
               node.appendChild(textnode);
@@ -112,6 +120,7 @@
             });
             test();
             count();
+            countDate();
 
             sum = fyn.length + jylland.length + sjaelland.length;
 
@@ -155,6 +164,33 @@
           document.querySelector("#fyn").style.fill = "#6a82a0";
           document.querySelector("#jylland").style.fill = "#242f41";
         }
+      }
+
+      function countDate() {
+        donations.forEach(time => {
+          console.log(time.amount);
+          if (time.date > "01-12-18" && time.date < "09-12-18") {
+            week1.push(time.amount);
+          } else if (time.date > "10-12-18" && time.date < "16-12-18") {
+            week2.push(time.amount);
+          } else if (time.date > "17-12-18" && time.date < "23-12-18") {
+            week3.push(time.amount);
+          } else if (time.date > "24-12-18" && time.date < "31-12-18") {
+            week4.push(time.amount);
+          } else if (time.date > "01-01-19" && time.date < "09-01-19") {
+            week5.push(time.amount);
+          } else if (time.date > "10-01-19" && time.date < "16-01-19") {
+            week6.push(time.amount);
+          } else if (time.date > "17-01-19" && time.date < "23-01-19") {
+            week7.push(time.amount);
+          } else if (time.date > "01-02-19" && time.date < "10-02-19") {
+            week8.push(time.amount);
+          } else if (time.date > "11-02-19" && time.date < "17-02-19") {
+            week9.push(time.amount);
+          } else if (time.date > "18-02-19" && time.date < "24-02-19") {
+            week10.push(time.amount);
+          }
+        });
       }
     </script>
   </body>
