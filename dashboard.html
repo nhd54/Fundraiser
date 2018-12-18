@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style/css/style.css" />
+    <link rel="stylesheet" href="style/css/test.css">
     <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
     <title>Document</title>
@@ -14,11 +15,23 @@
       <nav>
         <img src="image/logo.svg" alt="" />
 
-        <ul class="menu">
-          <li><img src="image/icon_oversigt.svg"> <a href="dashboard.html">OVERSIGT</a> </li>
-          <li><img src="image/icon_detaljer.svg"> <a href="details.html">DETALJER</a></li>
-          <li><img src="image/icon_settings.svg"> <a href="settings.html">INDSTILLINGER</a></li>
-        </ul>
+        <input id="burger" type="checkbox" />
+
+<label for="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+        <nav>    
+            <ul class="menu">
+                <li><img src="image/icon_oversigt.svg"> <a href="dashboard.html">OVERSIGT</a> </li>
+                <li><img src="image/icon_detaljer.svg"> <a href="details.html">DETALJER</a></li>
+                <li><img src="image/icon_settings.svg"> <a href="settings.html">INDSTILLINGER</a></li>
+              </ul>
+          </nav>
+
+       
       </nav>
       <article class="largeColumn" id="dashboard">
         <header class="largeColumn">

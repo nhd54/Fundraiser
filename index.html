@@ -27,6 +27,8 @@
               <option class="countryS" value="jylland">Jylland</option>
               <option class="countryS" value="fyn">Fyn</option>
             </select>
+            <br>
+            <input type="checkbox" name="annonym" value="Bike"> Vær annonym<br>
           
           <img src="image/donation1_img.jpg"></div>
             <div class="leftForm"><img class="img" src="image/icon_penge_kategori.svg"><br><input class="pengePlacering" type="text" name="amount" placeholder="Indtast beløb i DKK" /><br>
@@ -259,8 +261,26 @@ db.collection("fundraise")
 
       document.querySelector("#giveDonation").addEventListener("click", () => {
        
-        
-        db.collection("donations").add({
+        if(form.annonym.checked == true){
+          console.log("jeg er checked");
+          
+      db.collection("donations").add({
+          
+          firstname: "annonym",
+          lastname: form.lastname.value,
+          email: form.email.value,
+          country: form.country.value,
+          amount: form.amount.value,
+          attend: form.pleje.value,
+          textil: form.textil.value,
+          date: today
+});
+        }
+
+        else if (form.annonym.checked == false) {
+          console.log("jeg er ikke checked");
+          db.collection("donations").add({
+
           firstname: form.name.value,
           lastname: form.lastname.value,
           email: form.email.value,
@@ -269,7 +289,9 @@ db.collection("fundraise")
           attend: form.pleje.value,
           textil: form.textil.value,
           date: today
-        });
+});
+        }
+        
 
         
 
