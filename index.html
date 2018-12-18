@@ -125,7 +125,7 @@
             </div>
     
             <div class="information">
-              SENESTE DONATION<img src="image/icon_mand.svg" alt="" />Anonym 125 DKK
+              SENESTE DONATION<img src="image/icon_mand.svg" alt="" /> <p class="person"></p>
             </div>
     
             <div class="information">
@@ -220,17 +220,14 @@ console.log(today);
 
 
 // med limits (kun 1 visning den nyeste )
- db.collection("donations").limit(1)
+ db.collection("donations").orderBy("date", "desc").limit(1)
           .get()
           .then(snapshot => {
             snapshot.docs.forEach(doc => {
               fundraisertest.push(doc.data());
             });
- 
+            document.querySelector(".person").innerHTML = fundraisertest[0].firstname + "<br>" + fundraisertest[0].amount  + fundraisertest[0].attend  + fundraisertest[0].textil;
           });
-
-
-
 
 
 db.collection("fundraise")

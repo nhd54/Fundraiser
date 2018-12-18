@@ -43,9 +43,7 @@
           </div>
         </section>
         <section class="largeColumn details">
-          <div id="history" class="biggerColumn">
-            <div class="testHeight"></div>
-          </div>
+          <div id="history" class="biggerColumn"></div>
           <div id="allDonation" class="bigColumn"><ul id="myList"></ul></div>
         </section>
         <footer class="largeColumn"></footer>
@@ -104,7 +102,7 @@
             });
             topDonations.forEach(person => {
               var node = document.createElement("LI");
-              var textnode = document.createTextNode(person.name);
+              var textnode = document.createTextNode(person.firstname);
               node.appendChild(textnode);
               document.getElementById("myList").appendChild(node);
 

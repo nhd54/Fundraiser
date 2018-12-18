@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
     <link rel="stylesheet" href="style/css/style.css" />
     <title>Document</title>
   </head>
@@ -27,7 +29,7 @@
           </li>
         </ul>
       </nav>
-      <article class="largeColumn" id="dashboard">
+      <article class="largeColumn mobileSetting" id="dashboard">
         <header class="largeColumn">
           <img src="image/icon_oversigt.svg" alt="" /><br />
           <h1>
@@ -42,17 +44,17 @@
             <h3>PERSONLIGE OPLYSNINGER</h3>
             <br />
             <h3>NAVN</h3>
-            Mia
+            <span class="settingsName">mia</span>
             <h3>EFTERNAVN</h3>
-            Svejgaard <br />
+            <span class="settingsLastName"> Svejgaard</span><br />
             <h3>EMAIL</h3>
-            miasvejgaard@hotmail.com <br /><br />
+            <span class="email">miasvejgaard@hotmail.com</span> <br /><br />
             <h3>LOGIN</h3>
             <br />
             <h3>BRUGERNAVN</h3>
-            Mia
+            <span class="username">mia</span>
             <h3>PASSWORD</h3>
-            280289#
+            <span class="password">280289#</span>
             <div class="bottomPos">
               <button>REDIGER PROFIL</button
               ><img class="settingsAvatar" src="image/icon_mand.svg" />
@@ -62,17 +64,18 @@
             <h3>FUNDRAISER DETALJER</h3>
             <br /><br />
             <h3>FUNDRAISER NAVN</h3>
-            Støt hund & Hjemløs <br /><br />
+            <span class="support"></span> <br /><br />
             <h3>BANKOPLYSNINGER</h3>
             <br />
 
             <h3>Kontonr</h3>
-
-            0000123456789<br /><br />
+            <span class="kontonr"></span><br /><br />
             <h3>IBAN:</h3>
-            IBAN01234
+            <span class="iban"></span>
+
             <h3>SWIFT/BIC:</h3>
-            #012345
+            <span class="swift"></span>
+
             <div class="bottomPos">
               <button class="fundraiserButton">REDIGER PROFIL</button>
             </div>
@@ -103,19 +106,20 @@
           </div>
           <div id="goals">
             <div class="information">
-              MÅL<img src="image/icon_maal.svg" alt="" />100.000 DKK
+              MÅL<img src="image/icon_maal.svg" alt="" />
+              <span class="goal"></span>
             </div>
             <div class="information">
-              GEOGRAFI<img src="image/icon_jord.svg" alt="" /> DANMARK
+              GEOGRAFI<img src="image/icon_jord.svg" alt="" />
+              <span class="geografi"></span>
             </div>
             <div class="information">
-              FUNDRAISER START<img
-                src="image/icon_start.svg"
-                alt=""
-              />26.11.2018
+              FUNDRAISER START<img src="image/icon_start.svg" alt="" />
+              <span class="start"></span>
             </div>
             <div class="information">
-              FUNDRAISER SLUT<img src="image/icon_dato.svg" alt="" />23.11.56.04
+              FUNDRAISER SLUT<img src="image/icon_dato.svg" alt="" />
+              <div class="slut"></div>
             </div>
             <div class="bottomPos"><button>REDIGER DETALJER</button></div>
           </div>
@@ -124,4 +128,47 @@
       </article>
     </div>
   </body>
+  <script src="app.js"></script>
+  <script>
+    let fundraisertest = [];
+    let fundraiser = [];
+    let fyn = [];
+    let jylland = [];
+    let sjaelland = [];
+    let sum;
+    let fullAmount = [];
+    let moneyAmount = 0;
+    let users = [];
+
+    db.collection("users")
+      .get()
+      .then(snapshot => {
+        snapshot.docs.forEach(doc => {
+          users.push(doc.data());
+        });
+        document.querySelector(".settingsName").textContent =
+          users[0].firstname;
+        document.querySelector(".settingsLastName").textContent =
+          users[0].lastname;
+        document.querySelector(".email").textContent = users[0].email;
+        document.querySelector(".username").textContent = users[0].username;
+        document.querySelector(".password").textContent = users[0].password;
+      });
+
+    db.collection("fundraise")
+      .get()
+      .then(snapshot => {
+        snapshot.docs.forEach(doc => {
+          fundraiser.push(doc.data());
+        });
+        document.querySelector(".kontonr").textContent = fundraiser[0].Kontonr;
+        document.querySelector(".iban").textContent = fundraiser[0].IBAN;
+        document.querySelector(".swift").textContent = fundraiser[0].swift;
+        document.querySelector(".goal").textContent =
+          fundraiser[0].goal + " DKK";
+        document.querySelector(".geografi").textContent = fundraiser[0].country;
+        document.querySelector(".start").textContent = fundraiser[0].startDate;
+        document.querySelector(".slut").textContent = fundraiser[0].endDate;
+      });
+  </script>
 </html>

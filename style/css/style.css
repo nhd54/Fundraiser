@@ -16,6 +16,9 @@ html {
   height: 50px;
   background-color: green; }
 
+.person {
+  text-align: center; }
+
 #login {
   background-color: #fff; }
   #login .wrapper {

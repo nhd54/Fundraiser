@@ -58,6 +58,8 @@
         <footer class="largeColumn"></footer>
       </article>
     </div>
+
+    
   </body>
 <script src="app.js"></script>
 
@@ -109,16 +111,16 @@
 
           });
 
-          // med limits (kun 1 visning den nyeste )
- db.collection("donations").limit(3)
+          // med limits (kun 3 visning den nyeste )
+ db.collection("donations").orderBy("date", "desc").limit(3)
           .get()
           .then(snapshot => {
             snapshot.docs.forEach(doc => {
               top3.push(doc.data());
             });
-            nytest.children[1].children[2].textContent = top3[0].name;
-            nytest.children[2].children[2].textContent = top3[1].name;
-            nytest.children[3].children[2].textContent = top3[2].name;
+            nytest.children[1].children[2].innerHTML =top3[0].firstname + "<br>" + top3[0].amount  + top3[0].attend  + top3[0].textil;
+            nytest.children[2].children[2].innerHTML = top3[1].firstname + "<br>" + top3[1].amount + top3[1].attend  + top3[1].textil;
+            nytest.children[3].children[2].innerHTML = top3[2].firstname + "<br>" + top3[2].amount  + top3[2].attend  + top3[2].textil ;
           });
           console.log(document.querySelector("#userDonation"));
 
@@ -142,10 +144,6 @@
               toys.push(tæpper.textil)
             }
           })
-        }
-
-
-     
         }
 
          function countFood () {

@@ -2,16 +2,16 @@
 
 // Initialize Firebase
 
+// Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCjVw4AfA75wRqi4AQlpl63Cp7QfqoluoI",
-  authDomain: "fundraiser-31fa4.firebaseapp.com",
-  databaseURL: "https://fundraiser-31fa4.firebaseio.com",
-  projectId: "fundraiser-31fa4",
-  storageBucket: "fundraiser-31fa4.appspot.com",
-  messagingSenderId: "260126617633"
+  apiKey: "AIzaSyBlX_GGgndMgG1aL7_sTqZu9IpkpxjVKAg",
+  authDomain: "fundraising-b94fd.firebaseapp.com",
+  databaseURL: "https://fundraising-b94fd.firebaseio.com",
+  projectId: "fundraising-b94fd",
+  storageBucket: "fundraising-b94fd.appspot.com",
+  messagingSenderId: "737157633656"
 };
 firebase.initializeApp(config);
-
 const db = firebase.firestore();
 db.settings({ timestampsInSnapshots: true });
 
