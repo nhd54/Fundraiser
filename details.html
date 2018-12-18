@@ -31,7 +31,7 @@
         </ul>
       </nav>
 
-      <article class="largeColumn" id="dashboard">
+      <article class="largeColumn mobileSetting" id="dashboard">
         <header class="largeColumn">
           <img src="image/icon_detaljer.svg" alt="" /><br />
           <h1>
@@ -39,7 +39,7 @@
             DETALJER
           </h1>
         </header>
-        <section class="largeColumn details">
+        <section class="largeColumn mobileSetting details">
           <div id="time" class="bigColumn">
             FUNDRAISER START <img src="image/icon_start.svg" alt="" />
             <p class="start"></p>
@@ -47,12 +47,22 @@
             <p class="end"></p>
           </div>
           <div id="country" class="biggerColumn">
+            <div class="kortInfo">
+              DONATION PR: LANDSDEL<br />
+              <h4><img src="image/kortfarve-01.jpg" />MEST DONERET</h4>
+            </div>
             <div class="map"></div>
-            <div class="mapInfo"><span></span> <span></span> <span></span></div>
+            <div class="mapInfo">
+              JYLLAND:<span class="kortSpan"></span> FYN & ØERNE:<span
+                class="kortSpan"
+              ></span>
+              SJÆLLAND:<span></span>
+            </div>
           </div>
         </section>
-        <section class="largeColumn details">
+        <section class="largeColumn mobileSetting details">
           <div id="history" class="biggerColumn">
+            DONATIONS HISTORIE
             <div id="overallDonations">
               <strong>DKK</strong>
               <div class="graph">
@@ -72,7 +82,10 @@
               <span>7</span> <span>8</span> <span>9</span> <span>10</span>
             </div>
           </div>
-          <div id="allDonation" class="bigColumn"><ul id="myList"></ul></div>
+          <div id="allDonation" class="bigColumn">
+            DONATER
+            <ul id="myList"></ul>
+          </div>
         </section>
         <footer class="largeColumn"></footer>
       </article>
