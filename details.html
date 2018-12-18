@@ -13,28 +13,37 @@
   <body>
     <div id="wrapper">
       <nav>
-        <img src="https://via.placeholder.com/150" alt="" />
+        <img src="image/logo.svg" alt="" />
 
         <ul class="menu">
-          <li><a href="dashboard.html">OVERSIGT</a></li>
-          <li><a href="details.html">DETALJER</a></li>
-          <li><a href="settings.html">INDSTILLINGER</a></li>
+          <li>
+            <img src="image/icon_oversigt.svg" />
+            <a href="dashboard.html">OVERSIGT</a>
+          </li>
+          <li>
+            <img src="image/icon_detaljer.svg" />
+            <a href="details.html">DETALJER</a>
+          </li>
+          <li>
+            <img src="image/icon_settings.svg" />
+            <a href="settings.html">INDSTILLINGER</a>
+          </li>
         </ul>
       </nav>
 
       <article class="largeColumn" id="dashboard">
         <header class="largeColumn">
-          <img src="https://via.placeholder.com/150" alt="" />
+          <img src="image/icon_detaljer.svg" alt="" /><br />
           <h1>
             FUNDRAISER <br />
-            OVERSIGT
+            DETALJER
           </h1>
         </header>
         <section class="largeColumn details">
           <div id="time" class="bigColumn">
-            <img src="https://via.placeholder.com/100" alt="" />
+            FUNDRAISER START <img src="image/icon_start.svg" alt="" />
             <p class="start"></p>
-            <img src="https://via.placeholder.com/100" alt="" />
+            FUNRAISER SLUT <img src="image/icon_dato.svg" alt="" />
             <p class="end"></p>
           </div>
           <div id="country" class="biggerColumn">
@@ -44,7 +53,24 @@
         </section>
         <section class="largeColumn details">
           <div id="history" class="biggerColumn">
-            <img src="https://via.placeholder.com/250" alt="" />
+            <div id="overallDonations">
+              <strong>DKK</strong>
+              <div class="graph">
+                <div class="week"></div>
+                <div class="week"></div>
+                <div class="week"></div>
+                <div class="week"></div>
+                <div class="week"></div>
+                <div class="week"></div>
+                <div class="week"></div>
+                <div class="week"></div>
+                <div class="week"></div>
+                <div class="week"></div>
+              </div>
+              <strong>Uger</strong> <span>1</span> <span>2</span>
+              <span>3</span> <span>4</span> <span>5</span> <span>6</span>
+              <span>7</span> <span>8</span> <span>9</span> <span>10</span>
+            </div>
           </div>
           <div id="allDonation" class="bigColumn"><ul id="myList"></ul></div>
         </section>

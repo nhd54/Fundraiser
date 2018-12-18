@@ -402,6 +402,9 @@ article {
   }
   .biggerColumn {
     grid-column: span 7;
+
+    .map {
+    }
   }
 
   .halfColumn {
@@ -781,7 +784,7 @@ article {
         }
 
         .smallColumnSettings {
-          color: #6a82a0;
+          color: $color2;
           text-align: center;
           margin: 1vw;
         }
@@ -793,10 +796,14 @@ article {
 
       #time {
         display: grid;
-        grid-template-rows: repeat(2, 50%);
         justify-items: center;
         align-items: center;
         border-right: 2px solid $color2;
+        color: $color2;
+
+        img {
+          width: 10vw;
+        }
       }
 
       #history {
@@ -805,6 +812,7 @@ article {
 
       #country {
         display: grid;
+        width: 35vw;
 
         .mapInfo {
           display: grid;
@@ -1173,6 +1181,7 @@ article {
       grid-column: span 10;
       display: grid;
     }
+
     .biggerColumn {
       grid-column: span 7;
     }
@@ -1344,7 +1353,9 @@ article {
       }
     }
   }
-
+  .mobileSetting {
+    display: block !important;
+  }
   #wrapper {
     width: 100vw;
     display: grid;
@@ -1355,18 +1366,19 @@ article {
     }
 
     header {
-      background-color: $color2;
+      background-color: #6a82a0;
       height: 15vw;
-
+      grid-template-columns: 28vw 14vw 2vw 20vw;
       align-items: center;
+      justify-items: center;
       img {
         grid-column: 2 / span 1;
-        width: 4.5vw;
+        width: 7.5vw;
       }
 
       h1 {
         color: white;
-        font-size: 2vw;
+        font-size: 4vw;
         font-weight: 100;
       }
       .headerImg {
@@ -1447,17 +1459,17 @@ article {
         grid-template-rows: auto auto;
 
         button {
-          width: 20vw;
-          height: 4vw;
-          font-size: 1.4vw;
+          width: 32vw;
+          height: 10vw;
+          font-size: 3.4vw;
           color: #242f41;
           margin: 0 6vw 0 0;
           background-color: #e0ecfc;
           border: 0.1vw solid #242f41;
         }
         #profile {
-          min-height: 40vh;
-          width: 38vw;
+          min-height: 37vh;
+          width: 100vw;
           padding: 0 0 1vw 0;
           border-right: 2px solid $color2;
           border-bottom: 2px solid $color2;
@@ -1470,15 +1482,15 @@ article {
           }
 
           img {
-            width: 5vw;
+            width: 10vw;
           }
         }
 
         #fundraise {
           min-height: 30vh;
-          width: 38vw;
-          padding: 2vw 0 0 0;
-          border-right: 2px solid $color2;
+          width: 100vw;
+          padding: 2vw 0 5vw 0;
+          border-bottom: 2px solid #6a82a0;
 
           .bottomPos {
             margin: 2vw 0 0 3vw;
@@ -1489,29 +1501,31 @@ article {
         }
 
         #goals {
-          min-height: 50vh;
+          min-height: 60vh;
           border-top: 2px solid $color2;
           display: grid;
           padding: 0 0 1vw 1vw;
-          width: 41vw;
+
+          width: 100vw;
+
           grid-template-columns: repeat(2, 1fr);
           color: $color2;
 
           img {
-            width: 8vw;
+            width: 27vw;
           }
 
           .information {
             display: grid;
             justify-items: center;
             align-items: center;
-            width: 16vw;
-            font-size: 1.3vw;
-            height: 14vw;
+            width: 50vw;
+            font-size: 4.3vw;
+            height: 50vw;
           }
           .bottomPos {
-            width: 20vw;
-            height: 4vw;
+            width: 32vw;
+            height: 10vw;
             font-size: 1.4vw;
             color: #242f41;
             grid-column: span 2;
@@ -1521,7 +1535,7 @@ article {
         }
 
         #categories {
-          min-height: 30vh;
+          min-height: 34vh;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           margin: 1vw;
@@ -1537,13 +1551,13 @@ article {
           }
 
           .penge {
-            width: 7vw;
+            width: 21vw;
           }
           .tekstil {
-            width: 12vw;
+            width: 35vw;
           }
           .foder {
-            width: 10.9vw;
+            width: 31.9vw;
           }
           .settingsAvatar {
             width: 5vw;
@@ -1578,6 +1592,10 @@ article {
           justify-items: center;
           align-items: center;
           border-right: 2px solid $color2;
+
+          img {
+            width: 2vw;
+          }
         }
 
         #history {
@@ -1612,7 +1630,7 @@ article {
       }
 
       footer {
-        height: 10vw;
+        height: 20vw;
         min-height: 0;
         background-color: $color2;
       }
@@ -1622,4 +1640,36 @@ article {
   .display {
     display: grid;
   }
+}
+
+#overallDonations {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 90% 10%;
+  width: 35vw;
+  height: 250px;
+  grid-gap: 10px;
+}
+
+.graph {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column: span 10;
+  grid-gap: 10px;
+  border: 1px solid black;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.week {
+  background-color: green;
+  background-color: blue;
+}
+
+.week:nth-child(2n) {
+  background-color: darkblue;
+}
+
+span {
+  text-align: center;
 }
