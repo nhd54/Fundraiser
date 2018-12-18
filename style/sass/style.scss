@@ -866,6 +866,10 @@ article {
         display: grid;
         justify-items: center;
         align-items: center;
+
+        img {
+          width: 3vw;
+        }
       }
     }
 
@@ -1764,5 +1768,22 @@ span {
 
   .mobileSetting {
     display: block !important;
+  }
+
+  #allDonation ul {
+    width: 100vw;
+  }
+
+  #allDonation li {
+    list-style-type: none;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    list-style-type: none;
+    width: 25vw;
+  }
+
+  #allDonation li:before {
+    content: url(../../image/icon_donater_lille.svg);
   }
 }
