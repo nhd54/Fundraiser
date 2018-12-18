@@ -803,6 +803,7 @@ article {
 
     .details {
       grid-template-columns: repeat(12, 1fr);
+      color: $color2;
 
       #time {
         display: grid;
@@ -810,6 +811,7 @@ article {
         align-items: center;
         border-right: 2px solid $color2;
         color: $color2;
+        padding: 2vw 0 0 0;
 
         img {
           width: 10vw;
@@ -823,11 +825,28 @@ article {
       #country {
         display: grid;
         width: 35vw;
+        margin: 0 0 1vw 4vw;
+
+        h4 {
+          color: $color1;
+        }
+
+        img {
+          width: 1vw;
+        }
 
         .mapInfo {
-          display: grid;
+          display: inline-block;
           grid-template-columns: repeat(3, 1fr);
           justify-items: center;
+          margin: 0 0 0 4vw;
+        }
+
+        .kortInfo {
+          width: 13vw;
+          position: absolute;
+          top: 17vw;
+          left: 77vw;
         }
       }
 
@@ -835,11 +854,15 @@ article {
         display: grid;
         justify-items: center;
         align-items: center;
+        height: 22vw;
       }
 
       #history,
       #allDonation {
         border-top: 2px solid $color2;
+        display: grid;
+        justify-items: center;
+        align-items: center;
       }
     }
 
@@ -858,6 +881,43 @@ article {
 
 .display {
   display: grid;
+}
+
+#overallDonations {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 90% 10%;
+  width: 35vw;
+  height: 250px;
+  grid-gap: 10px;
+}
+
+.graph {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column: span 10;
+  grid-gap: 10px;
+  border: 1px solid black;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.week {
+  background-color: green;
+  background-color: blue;
+}
+
+.week:nth-child(2n) {
+  background-color: darkblue;
+}
+
+span {
+  text-align: center;
+}
+
+.kortSpan {
+  text-align: center;
+  margin: 0 3vw 0 0;
 }
 
 @media only screen and (max-width: 700px) {
@@ -1363,9 +1423,7 @@ article {
       }
     }
   }
-  .mobileSetting {
-    display: block !important;
-  }
+
   #wrapper {
     width: 100vw;
     display: grid;
@@ -1598,27 +1656,39 @@ article {
 
         #time {
           display: grid;
-          grid-template-rows: repeat(2, 50%);
+          width: 100vw;
+          height: 60vw;
           justify-items: center;
           align-items: center;
-          border-right: 2px solid $color2;
+          border-bottom: 2px solid #6a82a0;
+          padding: 2vw 0 0 0;
 
           img {
-            width: 2vw;
+            width: 25vw;
           }
         }
 
         #history {
           border-right: 2px solid $color2;
+          height: 100%;
         }
 
         #country {
           display: grid;
+          width: 100vw;
+          margin: 0;
 
           .mapInfo {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             justify-items: center;
+          }
+          .kortInfo {
+            width: 51vw;
+            font-size: 3.5vw;
+            position: absolute;
+            top: 114vw;
+            left: 52vw;
           }
         }
 
@@ -1651,35 +1721,45 @@ article {
     display: grid;
   }
 }
+@media only screen and (max-width: 500px) {
+  #overallDonations {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: 40vw 10vw;
+    width: 90vw;
+    height: 50vw;
+    grid-gap: 10px;
+  }
 
-#overallDonations {
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 90% 10%;
-  width: 35vw;
-  height: 250px;
-  grid-gap: 10px;
-}
+  .graph {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-column: span 10;
+    grid-gap: 10px;
+    border: 1px solid black;
+    align-items: flex-end;
+    overflow: hidden;
+  }
 
-.graph {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-column: span 10;
-  grid-gap: 10px;
-  border: 1px solid black;
-  align-items: flex-end;
-  overflow: hidden;
-}
+  .week {
+    background-color: green;
+    background-color: blue;
+  }
 
-.week {
-  background-color: green;
-  background-color: blue;
-}
+  .week:nth-child(2n) {
+    background-color: darkblue;
+  }
 
-.week:nth-child(2n) {
-  background-color: darkblue;
-}
+  span {
+    text-align: center;
+  }
 
-span {
-  text-align: center;
+  .kortSpan {
+    text-align: center;
+    margin: 0 3vw 0 0;
+  }
+
+  .mobileSetting {
+    display: block !important;
+  }
 }
