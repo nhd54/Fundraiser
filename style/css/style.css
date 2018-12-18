@@ -574,14 +574,17 @@ article {
       grid-template-columns: repeat(12, 1fr); }
       #wrapper #dashboard .details #time {
         display: grid;
-        grid-template-rows: repeat(2, 50%);
         justify-items: center;
         align-items: center;
-        border-right: 2px solid #6a82a0; }
+        border-right: 2px solid #6a82a0;
+        color: #6a82a0; }
+        #wrapper #dashboard .details #time img {
+          width: 10vw; }
       #wrapper #dashboard .details #history {
         border-right: 2px solid #6a82a0; }
       #wrapper #dashboard .details #country {
-        display: grid; }
+        display: grid;
+        width: 35vw; }
         #wrapper #dashboard .details #country .mapInfo {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -964,6 +967,8 @@ article {
         margin: 2vw 0 2vw 0; }
       article footerIndex img {
         width: 8vw; }
+  .mobileSetting {
+    display: block !important; }
   #wrapper {
     width: 100vw;
     display: grid;
@@ -973,13 +978,15 @@ article {
     #wrapper header {
       background-color: #6a82a0;
       height: 15vw;
-      align-items: center; }
+      grid-template-columns: 28vw 14vw 2vw 20vw;
+      align-items: center;
+      justify-items: center; }
       #wrapper header img {
         grid-column: 2 / span 1;
-        width: 4.5vw; }
+        width: 7.5vw; }
       #wrapper header h1 {
         color: white;
-        font-size: 2vw;
+        font-size: 4vw;
         font-weight: 100; }
       #wrapper header .headerImg {
         width: 100vw; }
@@ -1036,16 +1043,16 @@ article {
         display: grid;
         grid-template-rows: auto auto; }
         #wrapper #dashboard .settings button {
-          width: 20vw;
-          height: 4vw;
-          font-size: 1.4vw;
+          width: 32vw;
+          height: 10vw;
+          font-size: 3.4vw;
           color: #242f41;
           margin: 0 6vw 0 0;
           background-color: #e0ecfc;
           border: 0.1vw solid #242f41; }
         #wrapper #dashboard .settings #profile {
-          min-height: 40vh;
-          width: 38vw;
+          min-height: 37vh;
+          width: 100vw;
           padding: 0 0 1vw 0;
           border-right: 2px solid #6a82a0;
           border-bottom: 2px solid #6a82a0; }
@@ -1055,44 +1062,44 @@ article {
             grid-template-columns: repeat(2, 1fr);
             align-items: flex-end; }
           #wrapper #dashboard .settings #profile img {
-            width: 5vw; }
+            width: 10vw; }
         #wrapper #dashboard .settings #fundraise {
           min-height: 30vh;
-          width: 38vw;
-          padding: 2vw 0 0 0;
-          border-right: 2px solid #6a82a0; }
+          width: 100vw;
+          padding: 2vw 0 5vw 0;
+          border-bottom: 2px solid #6a82a0; }
           #wrapper #dashboard .settings #fundraise .bottomPos {
             margin: 2vw 0 0 3vw;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             align-items: flex-end; }
         #wrapper #dashboard .settings #goals {
-          min-height: 50vh;
+          min-height: 60vh;
           border-top: 2px solid #6a82a0;
           display: grid;
           padding: 0 0 1vw 1vw;
-          width: 41vw;
+          width: 100vw;
           grid-template-columns: repeat(2, 1fr);
           color: #6a82a0; }
           #wrapper #dashboard .settings #goals img {
-            width: 8vw; }
+            width: 27vw; }
           #wrapper #dashboard .settings #goals .information {
             display: grid;
             justify-items: center;
             align-items: center;
-            width: 16vw;
-            font-size: 1.3vw;
-            height: 14vw; }
+            width: 50vw;
+            font-size: 4.3vw;
+            height: 50vw; }
           #wrapper #dashboard .settings #goals .bottomPos {
-            width: 20vw;
-            height: 4vw;
+            width: 32vw;
+            height: 10vw;
             font-size: 1.4vw;
             color: #242f41;
             grid-column: span 2;
             margin: 0 6vw 0 2vw;
             background-color: #e0ecfc; }
         #wrapper #dashboard .settings #categories {
-          min-height: 30vh;
+          min-height: 34vh;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           margin: 1vw; }
@@ -1105,11 +1112,11 @@ article {
             margin: 0 6vw 0 2vw;
             background-color: #e0ecfc; }
           #wrapper #dashboard .settings #categories .penge {
-            width: 7vw; }
+            width: 21vw; }
           #wrapper #dashboard .settings #categories .tekstil {
-            width: 12vw; }
+            width: 35vw; }
           #wrapper #dashboard .settings #categories .foder {
-            width: 10.9vw; }
+            width: 31.9vw; }
           #wrapper #dashboard .settings #categories .settingsAvatar {
             width: 5vw;
             display: inline-block; }
@@ -1134,6 +1141,8 @@ article {
           justify-items: center;
           align-items: center;
           border-right: 2px solid #6a82a0; }
+          #wrapper #dashboard .details #time img {
+            width: 2vw; }
         #wrapper #dashboard .details #history {
           border-right: 2px solid #6a82a0; }
         #wrapper #dashboard .details #country {
@@ -1153,8 +1162,35 @@ article {
         justify-items: center;
         align-items: center; }
       #wrapper #dashboard footer {
-        height: 10vw;
+        height: 20vw;
         min-height: 0;
         background-color: #6a82a0; }
   .display {
     display: grid; } }
+
+#overallDonations {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 90% 10%;
+  width: 35vw;
+  height: 250px;
+  grid-gap: 10px; }
+
+.graph {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column: span 10;
+  grid-gap: 10px;
+  border: 1px solid black;
+  align-items: flex-end;
+  overflow: hidden; }
+
+.week {
+  background-color: green;
+  background-color: blue; }
+
+.week:nth-child(2n) {
+  background-color: darkblue; }
+
+span {
+  text-align: center; }
