@@ -85,6 +85,10 @@ html {
   }
 }
 
+.accordion {
+  display: none;
+}
+
 .headerPopUp {
   height: 11vw;
   width: 60vw;
@@ -1764,6 +1768,55 @@ span {
   .kortSpan {
     text-align: center;
     margin: 0 3vw 0 0;
+  }
+
+  .accordion {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    color: #444;
+    cursor: pointer;
+    margin: 2vw;
+    padding: 2vw;
+    background-color: #3d5566;
+    height: 30px;
+    width: 30px;
+    text-align: left;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.4s;
+    z-index: 10;
+  }
+
+  .accordion:hover {
+    transform: scale(1.1, 1.1);
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: #ede5df;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  #wrapper nav .menu {
+    display: none;
+    grid-gap: 20px;
+    list-style-type: none;
+    justify-self: center;
+    position: fixed;
+    width: 100vw;
+    top: 0vw;
+    height: 22vh;
+    text-align: center;
+    background-color: blue;
+    left: 0;
+    font-size: 2.5vw;
   }
 
   .mobileSetting {
