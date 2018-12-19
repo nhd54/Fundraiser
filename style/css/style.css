@@ -367,7 +367,9 @@ article {
       background-repeat: no-repeat; }
     article #donation p {
       text-align: center;
-      font-size: 1vw; }
+      font-size: 1vw;
+      margin: 1vw 0 0 0;
+      width: 31vw; }
   article #donationInfo {
     height: 18vw;
     margin: 2vw 0 0 0;
@@ -978,7 +980,9 @@ span {
         background-repeat: no-repeat; }
       article #donation p {
         text-align: center;
-        font-size: 4vw; }
+        font-size: 4vw;
+        margin: 1vw 0 0 0;
+        width: 75vw; }
     article #donationInfo {
       height: 100%;
       padding: 8vw 0 20vw 0;
