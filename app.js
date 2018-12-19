@@ -78,7 +78,7 @@ function indexInit() {
   today = dd + "-" + mm + "-" + yyyy + "-" + hour + ":" + minut;
   console.log(today);
 
-  var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
+  var countDownDate = new Date("Jan 24, 2019 15:37:25").getTime();
 
   // Update the count down every 1 second
   var x = setInterval(function() {
@@ -217,6 +217,13 @@ function adminInit() {
         username: adminForm.username.value,
         password: adminForm.password.value
       });
+      (adminForm.firstname.value = " "),
+        (adminForm.lastname.value = " "),
+        (adminForm.email.value = " "),
+        (adminForm.username.value = " "),
+        (adminForm.password.value = " ");
+
+      document.querySelector(".oprettet").style.display = "block";
     });
   });
 }
