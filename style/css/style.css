@@ -8,6 +8,12 @@
   font-family: afta sans;
   font-weight: 100; }
 
+#admin input {
+  float: right;
+  margin-right: 5vw;
+  margin-top: 10px;
+  width: 20vw; }
+
 html {
   overflow-x: hidden; }
 

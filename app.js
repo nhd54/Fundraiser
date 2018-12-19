@@ -18,6 +18,7 @@ db.settings({ timestampsInSnapshots: true });
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 const logonButton = document.querySelector("#loginButton");
+let adminForm = document.querySelector("#addAdmin");
 let admins = [];
 let fundraisertest = [];
 let topDonations = [];
@@ -64,7 +65,8 @@ function indexInit() {
   var dd = today.getDate();
   var mm = today.getMonth() + 1; //January is 0!
   var yyyy = today.getFullYear();
-
+  var hour = today.getHours();
+  var minut = today.getMinutes();
   if (dd < 10) {
     dd = "0" + dd;
   }
@@ -73,7 +75,7 @@ function indexInit() {
     mm = "0" + mm;
   }
 
-  today = dd + "-" + mm + "-" + yyyy;
+  today = dd + "-" + mm + "-" + yyyy + "-" + hour + ":" + minut;
   console.log(today);
 
   var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
@@ -174,7 +176,7 @@ function indexInit() {
           firstname: "annonym",
           lastname: form.lastname.value,
           email: form.email.value,
-          country: form.country.value,
+          country: form.country.value + " DKK",
           amount: form.amount.value,
           attend: form.pleje.value,
           textil: form.textil.value,
@@ -187,7 +189,7 @@ function indexInit() {
           lastname: form.lastname.value,
           email: form.email.value,
           country: form.country.value,
-          amount: form.amount.value,
+          amount: form.amount.value + " DKK",
           attend: form.pleje.value,
           textil: form.textil.value,
           date: today
@@ -199,6 +201,22 @@ function indexInit() {
       setTimeout(function() {
         window.location.replace("index.html");
       }, 10000);
+    });
+  });
+}
+
+function adminInit() {
+  adminForm.addEventListener("submit", e => {
+    e.preventDefault();
+
+    document.querySelector("#createAdmin").addEventListener("click", () => {
+      db.collection("users").add({
+        firstname: adminForm.firstname.value,
+        lastname: adminForm.lastname.value,
+        email: adminForm.email.value,
+        username: adminForm.username.value,
+        password: adminForm.password.value
+      });
     });
   });
 }
