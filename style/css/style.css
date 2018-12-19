@@ -604,7 +604,7 @@ article {
           display: inline-block;
           grid-template-columns: repeat(3, 1fr);
           justify-items: center;
-          margin: 0 0 0 4vw; }
+          margin: 0 0 0 1vw; }
         #wrapper #dashboard .details #country .kortInfo {
           width: 13vw;
           position: absolute;

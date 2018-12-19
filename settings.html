@@ -138,59 +138,6 @@
   </body>
   <script src="app.js"></script>
   <script>
-    let fundraisertest = [];
-    let fundraiser = [];
-    let fyn = [];
-    let jylland = [];
-    let sjaelland = [];
-    let sum;
-    let fullAmount = [];
-    let moneyAmount = 0;
-    let users = [];
-
-    let acc = document.getElementsByClassName("accordion");
-    var i;
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        let panel = document.querySelector(".menu");
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
-      });
-    }
-
-    db.collection("users")
-      .get()
-      .then(snapshot => {
-        snapshot.docs.forEach(doc => {
-          users.push(doc.data());
-        });
-        document.querySelector(".settingsName").textContent =
-          users[0].firstname;
-        document.querySelector(".settingsLastName").textContent =
-          users[0].lastname;
-        document.querySelector(".email").textContent = users[0].email;
-        document.querySelector(".username").textContent = users[0].username;
-        document.querySelector(".password").textContent = users[0].password;
-      });
-
-    db.collection("fundraise")
-      .get()
-      .then(snapshot => {
-        snapshot.docs.forEach(doc => {
-          fundraiser.push(doc.data());
-        });
-        document.querySelector(".kontonr").textContent = fundraiser[0].Kontonr;
-        document.querySelector(".iban").textContent = fundraiser[0].IBAN;
-        document.querySelector(".swift").textContent = fundraiser[0].swift;
-        document.querySelector(".goal").textContent =
-          fundraiser[0].goal + " DKK";
-        document.querySelector(".geografi").textContent = fundraiser[0].country;
-        document.querySelector(".start").textContent = fundraiser[0].startDate;
-        document.querySelector(".slut").textContent = fundraiser[0].endDate;
-      });
+    document.addEventListener("DOMContentLoaded", settingInit);
   </script>
 </html>

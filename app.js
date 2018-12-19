@@ -19,6 +19,8 @@ const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 const logonButton = document.querySelector("#login");
 let fundraisertest = [];
+let topDonations = [];
+let span = document.createElement("p");
 let top3 = [];
 let nytest = document.querySelector("#userDonation");
 let fundraiser = [];
@@ -40,8 +42,38 @@ let hundegodbidder = [];
 let hundefoder = [];
 let menuOption = document.querySelector(".menu");
 const form = document.querySelector("#add-cafe-form");
+let users = [];
+let week1 = [];
+let week2 = [];
+let week3 = [];
+let week4 = [];
+let week5 = [];
+let week6 = [];
+let week7 = [];
+let week8 = [];
+let week9 = [];
+let week10 = [];
+let countFyn = document.querySelector(".mapInfo span:nth-child(2)");
+let countsjaelland = document.querySelector("#country span:nth-child(3)");
+let countJylland = document.querySelector("#country span:nth-child(1)");
 
 function indexInit() {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1; //January is 0!
+  var yyyy = today.getFullYear();
+
+  if (dd < 10) {
+    dd = "0" + dd;
+  }
+
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+
+  today = dd + "-" + mm + "-" + yyyy;
+  console.log(today);
+
   var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
 
   // Update the count down every 1 second
@@ -169,6 +201,256 @@ function indexInit() {
   });
 }
 
+function dashboardInit() {
+  db.collection("donations")
+    .get()
+    .then(snapshot => {
+      snapshot.docs.forEach(doc => {
+        donations.push(doc.data());
+      });
+      count();
+      test();
+      countTæpper();
+      countFood();
+
+      document.querySelector(".blanket").textContent =
+        blankets.length + " " + blankets[0];
+      document.querySelector(".basket").textContent =
+        basket.length + " " + basket[0];
+      document.querySelector(".toys").textContent = toys.length + " " + toys[0];
+      document.querySelector(".cloth").textContent =
+        cloth.length + " " + cloth[0];
+      document.querySelector(".dogblankets").textContent =
+        dogBlankets.length + " " + dogBlankets[0];
+
+      document.querySelector(".hundefoder").textContent =
+        hundefoder.length + " " + hundefoder[0];
+      document.querySelector(".hundegodbidder").textContent =
+        hundegodbidder.length + " " + hundegodbidder[0];
+      document.querySelector(".loppekur").textContent =
+        loppekur.length + " " + loppekur[0];
+      document.querySelector(".ormekur").textContent =
+        ormekur.length + " " + ormekur[0];
+    });
+
+  // med limits (kun 3 visning den nyeste )
+  db.collection("donations")
+    .orderBy("date", "desc")
+    .limit(3)
+    .get()
+    .then(snapshot => {
+      snapshot.docs.forEach(doc => {
+        top3.push(doc.data());
+      });
+      nytest.children[1].children[2].innerHTML =
+        top3[0].firstname +
+        "<br>" +
+        top3[0].amount +
+        top3[0].attend +
+        top3[0].textil;
+      nytest.children[2].children[2].innerHTML =
+        top3[1].firstname +
+        "<br>" +
+        top3[1].amount +
+        top3[1].attend +
+        top3[1].textil;
+      nytest.children[3].children[2].innerHTML =
+        top3[2].firstname +
+        "<br>" +
+        top3[2].amount +
+        top3[2].attend +
+        top3[2].textil;
+    });
+  console.log(document.querySelector("#userDonation"));
+
+  function countTæpper() {
+    donations.forEach(tæpper => {
+      if (tæpper.textil == "tæpper") {
+        blankets.push(tæpper.textil);
+      } else if (tæpper.textil == "tøj") {
+        cloth.push(tæpper.textil);
+      } else if (tæpper.textil == "hundedækken") {
+        dogBlankets.push(tæpper.textil);
+      } else if (tæpper.textil == "hundekurv") {
+        basket.push(tæpper.textil);
+      } else if (tæpper.textil == "tilbehør til hunde") {
+        toys.push(tæpper.textil);
+      }
+    });
+  }
+
+  function countFood() {
+    donations.forEach(food => {
+      console.log(food.attend);
+      if (food.attend == "hundefoder") {
+        hundefoder.push(food.attend);
+      } else if (food.attend == "hundegodbidder") {
+        hundegodbidder.push(food.attend);
+      } else if (food.attend == "loppekur") {
+        loppekur.push(food.attend);
+      } else if (food.attend == "ormekur") {
+        ormekur.push(food.attend);
+      }
+    });
+  }
+
+  function count() {
+    donations.forEach(amount => {
+      if (amount.amount > 0) {
+        fullAmount.push(amount.amount);
+      }
+    });
+  }
+
+  function test() {
+    fullAmount.forEach(sum => {
+      moneyAmount = moneyAmount + parseInt(fullAmount);
+    });
+    document.querySelector(".indsamlet").textContent = moneyAmount + " DKK";
+  }
+
+  let acc = document.getElementsByClassName("accordion");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      let panel = document.querySelector(".menu");
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+}
+
+function detailsInit() {
+  db.collection("fundraise")
+    .get()
+    .then(snapshot => {
+      snapshot.docs.forEach(doc => {
+        fundraiser.push(doc.data());
+      });
+      document.querySelector(".start").textContent = fundraiser[0].startDate;
+      document.querySelector(".end").textContent = fundraiser[0].endDate;
+    });
+
+  // med limits (kun 7 visning den nyeste )
+  db.collection("donations")
+    .limit(7)
+    .get()
+    .then(snapshot => {
+      snapshot.docs.forEach(doc => {
+        topDonations.push(doc.data());
+      });
+      topDonations.forEach(person => {
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode(person.firstname);
+        node.appendChild(textnode);
+        document.getElementById("myList").appendChild(node);
+
+        document.querySelector("#allDonation").appendChild(span);
+      });
+    });
+
+  db.collection("donations")
+    .get()
+    .then(snapshot => {
+      snapshot.docs.forEach(doc => {
+        donations.push(doc.data());
+      });
+      createCountry();
+      countCountry();
+      countDate();
+
+      document.querySelector(".graph").children[0].style.height =
+        week1.length + "%";
+      document.querySelector(".graph").children[1].style.height =
+        week2.length + "%";
+      document.querySelector(".graph").children[2].style.height =
+        week3.length + "%";
+      document.querySelector(".graph").children[3].style.height =
+        week4.length + "%";
+      document.querySelector(".graph").children[3].style.height =
+        week5.length + "%";
+      document.querySelector(".graph").children[3].style.height =
+        week6.length + "%";
+      document.querySelector(".graph").children[3].style.height =
+        week7.length + "%";
+      document.querySelector(".graph").children[3].style.height =
+        week8.length + "%";
+      document.querySelector(".graph").children[3].style.height =
+        week9.length + "%";
+      document.querySelector(".graph").children[3].style.height =
+        week10.length + "%";
+
+      sum = fyn.length + jylland.length + sjaelland.length;
+
+      countFyn.textContent = Math.round((fyn.length / sum) * 100) + "%";
+      countJylland.textContent = Math.round((jylland.length / sum) * 100) + "%";
+      countsjaelland.textContent =
+        Math.round((sjaelland.length / sum) * 100) + "%";
+    });
+  let acc = document.getElementsByClassName("accordion");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      let panel = document.querySelector(".menu");
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+}
+
+function settingInit() {
+  let acc = document.getElementsByClassName("accordion");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      let panel = document.querySelector(".menu");
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+
+  db.collection("users")
+    .get()
+    .then(snapshot => {
+      snapshot.docs.forEach(doc => {
+        users.push(doc.data());
+      });
+      document.querySelector(".settingsName").textContent = users[0].firstname;
+      document.querySelector(".settingsLastName").textContent =
+        users[0].lastname;
+      document.querySelector(".email").textContent = users[0].email;
+      document.querySelector(".username").textContent = users[0].username;
+      document.querySelector(".password").textContent = users[0].password;
+    });
+
+  db.collection("fundraise")
+    .get()
+    .then(snapshot => {
+      snapshot.docs.forEach(doc => {
+        fundraiser.push(doc.data());
+      });
+      document.querySelector(".kontonr").textContent = fundraiser[0].Kontonr;
+      document.querySelector(".iban").textContent = fundraiser[0].IBAN;
+      document.querySelector(".swift").textContent = fundraiser[0].swift;
+      document.querySelector(".goal").textContent = fundraiser[0].goal + " DKK";
+      document.querySelector(".geografi").textContent = fundraiser[0].country;
+      document.querySelector(".start").textContent = fundraiser[0].startDate;
+      document.querySelector(".slut").textContent = fundraiser[0].endDate;
+    });
+}
+
 function login() {
   logonButton.addEventListener("click", () => {
     db.collection("users")
@@ -199,6 +481,34 @@ function count() {
   });
 }
 
+function createCountry() {
+  donations.forEach(country => {
+    if (country.country == "fyn") {
+      fyn.push(country);
+    } else if (country.country == "jylland") {
+      jylland.push(country);
+    } else if (country.country == "sjælland") {
+      sjaelland.push(country);
+    }
+  });
+}
+
+function countCountry() {
+  if (sjaelland.length > fyn.length && sjaelland.length > jylland.length) {
+    document.querySelector("#sjaelland").style.fill = "#242f41";
+    document.querySelector("#fyn").style.fill = "#6a82a0";
+    document.querySelector("#jylland").style.fill = "#6a82a0";
+  } else if (fyn.length > sjaelland.length && fyn.length) {
+    document.querySelector("#sjaelland").style.fill = "#6a82a0";
+    document.querySelector("#fyn").style.fill = "#242f41";
+    document.querySelector("#jylland").style.fill = "#6a82a0";
+  } else if (jylland.length > sjaelland.length && jylland.length > fyn.length) {
+    document.querySelector("#sjaelland").style.fill = "#6a82a0";
+    document.querySelector("#fyn").style.fill = "#6a82a0";
+    document.querySelector("#jylland").style.fill = "#242f41";
+  }
+}
+
 function test() {
   fullAmount.forEach(sum => {
     moneyAmount = moneyAmount + parseInt(fullAmount);
@@ -210,4 +520,31 @@ function showPayment() {
   if ((form.amount.value = "11")) {
     console.log("test test test");
   }
+}
+
+function countDate() {
+  donations.forEach(time => {
+    console.log(time.amount);
+    if (time.date > "01-12-18" && time.date < "09-12-18") {
+      week1.push(time.amount);
+    } else if (time.date > "10-12-18" && time.date < "16-12-18") {
+      week2.push(time.amount);
+    } else if (time.date > "17-12-18" && time.date < "23-12-18") {
+      week3.push(time.amount);
+    } else if (time.date > "24-12-18" && time.date < "31-12-18") {
+      week4.push(time.amount);
+    } else if (time.date > "01-01-19" && time.date < "09-01-19") {
+      week5.push(time.amount);
+    } else if (time.date > "10-01-19" && time.date < "16-01-19") {
+      week6.push(time.amount);
+    } else if (time.date > "17-01-19" && time.date < "23-01-19") {
+      week7.push(time.amount);
+    } else if (time.date > "01-02-19" && time.date < "10-02-19") {
+      week8.push(time.amount);
+    } else if (time.date > "11-02-19" && time.date < "17-02-19") {
+      week9.push(time.amount);
+    } else if (time.date > "18-02-19" && time.date < "24-02-19") {
+      week10.push(time.amount);
+    }
+  });
 }
