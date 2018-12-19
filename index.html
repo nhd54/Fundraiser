@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/css/style.css" />
     <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
-    <title>Document</title>
+    <title>Hjælp hund & Hjemløs - Fundraising</title>
   </head>
   <body>
       <div class="popUp">
@@ -16,10 +16,10 @@
           </div>
           <form id="add-cafe-form">
             <div class="rightForm">
-            <div class="navnForm">Fornavn<br><input class="navnW" type="text" name="name" placeholder="" /></div>
-            <div class="efternavnForm">Efternavn<br><input class="eNavnW" type="text" name="lastname" placeholder="" /><br></div>
+            <div class="navnForm">Fornavn<br><input class="navnW" type="text" name="name" placeholder="" required /></div>
+            <div class="efternavnForm">Efternavn<br><input class="eNavnW" type="text" name="lastname" placeholder="" required /><br></div>
             Email<br>
-            <input class="emailW" type="text" name="email" placeholder="" /><br>
+            <input class="emailW" type="email" name="email" placeholder="" required/><br>
             Landsdel<br>
             <select name="country" class="minimallandW">
                 <option class="countryS" value="">Vælg Landsdel</option>

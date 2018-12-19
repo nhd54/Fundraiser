@@ -17,7 +17,8 @@ db.settings({ timestampsInSnapshots: true });
 
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
-const logonButton = document.querySelector("#login");
+const logonButton = document.querySelector("#loginButton");
+let admins = [];
 let fundraisertest = [];
 let topDonations = [];
 let span = document.createElement("p");
@@ -56,6 +57,7 @@ let week10 = [];
 let countFyn = document.querySelector(".mapInfo span:nth-child(2)");
 let countsjaelland = document.querySelector("#country span:nth-child(3)");
 let countJylland = document.querySelector("#country span:nth-child(1)");
+let i = 0;
 
 function indexInit() {
   var today = new Date();
@@ -452,24 +454,35 @@ function settingInit() {
 }
 
 function login() {
-  logonButton.addEventListener("click", () => {
-    db.collection("users")
-      .get()
-      .then(snapshot => {
-        snapshot.docs.forEach(doc => {
-          if (
-            username.value == doc.data().username &&
-            password.value == doc.data().password
-          ) {
-            window.location.href = "dashboard.html";
-            //console.log("vi er inde");
-
-            return;
-          } else {
-            console.log("incorrect username or password");
-          }
-        });
+  db.collection("users")
+    .get()
+    .then(snapshot => {
+      snapshot.docs.forEach(doc => {
+        admins.push(doc.data());
       });
+    });
+
+  document.querySelector(".back").addEventListener("click", () => {
+    window.location.href = "index.html";
+  });
+
+  logonButton.addEventListener("click", () => {
+    admins.forEach(admin => {
+      if (
+        username.value == admin.username &&
+        password.value == admin.password
+      ) {
+        window.location.href = "dashboard.html";
+        //console.log("vi er inde");
+
+        return;
+      } else if (
+        username.value != admin.username &&
+        password.value != admin.password
+      ) {
+        document.querySelector(".wrongPassword").style.display = "block";
+      }
+    });
   });
 }
 

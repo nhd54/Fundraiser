@@ -58,6 +58,13 @@ html {
       font-size: 0.9vw;
       display: inline-block;
     }
+
+    .wrongPassword {
+      display: none;
+      text-align: center;
+      width: 65%;
+      color: red;
+    }
     img {
       width: 15vw;
       margin: 1vw 0 0 6vw;

@@ -8,7 +8,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
     <link rel="stylesheet" href="style/css/style.css" />
-    <title>Document</title>
+    <title>Fundraiser - Login</title>
   </head>
   <body id="login">
     <div class="wrapper">
@@ -25,14 +25,19 @@
         <h2>Password</h2>
         <input
           class="pengePlacering"
-          type="text"
+          type="password"
           id="password"
           placeholder=""
         />
         <br />
         <div class="bottomLogin">
-          <button id="login">Login</button>
-          <p>Gå tilbage til Fundraiser landingpage</p>
+          <button id="loginButton">Login</button>
+          <p class="back">Gå tilbage til Fundraiser landingpage</p>
+          <br />
+          <br />
+          <p class="wrongPassword">
+            Brugernavn & Password matcher ikke overens
+          </p>
         </div>
       </div>
     </div>
