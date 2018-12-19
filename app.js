@@ -38,6 +38,7 @@ let sum;
 let fullAmount = [];
 let moneyAmount = 0;
 let donations = [];
+var increaseNr = 0;
 let ormekur = [];
 let loppekur = [];
 let hundegodbidder = [];
@@ -59,6 +60,7 @@ let countFyn = document.querySelector(".mapInfo span:nth-child(2)");
 let countsjaelland = document.querySelector("#country span:nth-child(3)");
 let countJylland = document.querySelector("#country span:nth-child(1)");
 let i = 0;
+let donated = [];
 
 function indexInit() {
   var today = new Date();
@@ -372,11 +374,17 @@ function detailsInit() {
       });
       topDonations.forEach(person => {
         var node = document.createElement("LI");
+        // donated = topDonations;
+
+        donated.push(topDonations[increaseNr].amount);
+
         var textnode = document.createTextNode(person.firstname);
         node.appendChild(textnode);
         document.getElementById("myList").appendChild(node);
 
         document.querySelector("#allDonation").appendChild(span);
+
+        increaseNr++;
       });
     });
 
