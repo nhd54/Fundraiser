@@ -26,6 +26,9 @@ html {
   height: 50px;
   background-color: green; }
 
+#allDonation ul {
+  width: 100%; }
+
 #allDonation li {
   width: 100%;
   list-style-type: none;
@@ -655,7 +658,7 @@ article {
       justify-items: center;
       align-items: center; }
     #wrapper #dashboard footer {
-      height: 10vw;
+      height: 11.9vw;
       min-height: 0;
       background-color: #6a82a0; }
 
@@ -1404,4 +1407,5 @@ span {
     height: 64vh;
     grid-template-rows: auto auto; }
     #admin #wrapper #dashboard .settings #profile {
-      border: none; } }
+      border: none;
+      min-height: 102vh; } }

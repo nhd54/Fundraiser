@@ -386,6 +386,7 @@ function detailsInit() {
 
   // med limits (kun 7 visning den nyeste )
   db.collection("donations")
+    .orderBy("date", "desc")
     .limit(7)
     .get()
     .then(snapshot => {
