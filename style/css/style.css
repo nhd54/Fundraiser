@@ -26,18 +26,23 @@ html {
   height: 50px;
   background-color: green; }
 
+#allDonation span {
+  text-align: initial; }
+
 #allDonation ul {
-  width: 100%; }
+  width: 85%;
+  height: 35vh;
+  overflow-y: scroll; }
 
 #allDonation li {
   width: 100%;
   list-style-type: none;
   display: grid;
-  grid-template-columns: 20% 40% 40%; }
+  grid-template-columns: 11% 32% 57%; }
 
 #allDonation li:before {
   content: url(../../image/icon_donater_lille.svg);
-  width: 33%; }
+  width: 71%; }
 
 .person {
   text-align: center; }

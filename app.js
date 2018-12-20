@@ -402,64 +402,33 @@ function detailsInit() {
         document.querySelector(".end").textContent = fundraiser[0].endDate;
       });
 
-    // med limits (kun 7 visning den nyeste )
+    const donatelist = document.querySelector("#myList");
+
+    function renderDonation(doc) {
+      let li = document.createElement("li");
+      let name = document.createElement("span");
+      let amount = document.createElement("span");
+
+      name.textContent = doc.data().firstname;
+      amount.textContent =
+        doc.data().amount +
+        " DKK " +
+        doc.data().textil +
+        " " +
+        doc.data().attend;
+
+      li.appendChild(name);
+      li.appendChild(amount);
+
+      donatelist.appendChild(li);
+    }
     db.collection("donations")
       .orderBy("date", "desc")
-      .limit(7)
       .get()
       .then(snapshot => {
         snapshot.docs.forEach(doc => {
-          topDonations.push(doc.data());
+          renderDonation(doc);
         });
-        topDonations.forEach(person => {
-          // donated = topDonations;
-
-          donated.push(topDonations[increaseNr].amount);
-
-          increaseNr++;
-        });
-        document.querySelector(
-          "#myList li:nth-child(1) span:nth-child(1)"
-        ).textContent = topDonations[0].firstname;
-        document.querySelector(
-          "#myList li:nth-child(1) span:nth-child(2)"
-        ).textContent = topDonations[0].amount + " DKK";
-        document.querySelector(
-          "#myList li:nth-child(2) span:nth-child(1)"
-        ).textContent = topDonations[1].firstname;
-        document.querySelector(
-          "#myList li:nth-child(2) span:nth-child(2)"
-        ).textContent = topDonations[1].amount + " DKK";
-        document.querySelector(
-          "#myList li:nth-child(3) span:nth-child(1)"
-        ).textContent = topDonations[2].firstname;
-        document.querySelector(
-          "#myList li:nth-child(3) span:nth-child(2)"
-        ).textContent = topDonations[2].amount + " DKK";
-        document.querySelector(
-          "#myList li:nth-child(4) span:nth-child(1)"
-        ).textContent = topDonations[3].firstname;
-        document.querySelector(
-          "#myList li:nth-child(4) span:nth-child(2)"
-        ).textContent = topDonations[3].amount + " DKK";
-        document.querySelector(
-          "#myList li:nth-child(5) span:nth-child(1)"
-        ).textContent = topDonations[4].firstname;
-        document.querySelector(
-          "#myList li:nth-child(5) span:nth-child(2)"
-        ).textContent = topDonations[4].amount + " DKK";
-        document.querySelector(
-          "#myList li:nth-child(6) span:nth-child(1)"
-        ).textContent = topDonations[5].firstname;
-        document.querySelector(
-          "#myList li:nth-child(6) span:nth-child(2)"
-        ).textContent = topDonations[5].amount + " DKK";
-        document.querySelector(
-          "#myList li:nth-child(7) span:nth-child(1)"
-        ).textContent = topDonations[6].firstname;
-        document.querySelector(
-          "#myList li:nth-child(7) span:nth-child(2)"
-        ).textContent = topDonations[6].amount + " DKK";
       });
 
     db.collection("donations")
