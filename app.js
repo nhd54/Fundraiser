@@ -292,23 +292,28 @@ function dashboardInit() {
         top3[0].firstname +
         "<br>" +
         top3[0].amount +
-        " DKK" +
+        " DKK " +
         top3[0].attend +
-        top3[0].textil;
+        " ";
+      top3[0].textil + " ";
       nytest.children[2].children[2].innerHTML =
         top3[1].firstname +
         "<br>" +
         top3[1].amount +
-        " DKK" +
+        " DKK " +
         top3[1].attend +
-        top3[1].textil;
+        " " +
+        top3[1].textil +
+        " ";
       nytest.children[3].children[2].innerHTML =
         top3[2].firstname +
         "<br>" +
         top3[2].amount +
-        " DKK" +
+        " DKK " +
         top3[2].attend +
-        top3[2].textil;
+        " " +
+        top3[2].textil +
+        " ";
     });
   console.log(document.querySelector("#userDonation"));
 
@@ -374,114 +379,6 @@ function dashboardInit() {
 }
 
 function detailsInit() {
-  db.collection("fundraise")
-    .get()
-    .then(snapshot => {
-      snapshot.docs.forEach(doc => {
-        fundraiser.push(doc.data());
-      });
-      document.querySelector(".start").textContent = fundraiser[0].startDate;
-      document.querySelector(".end").textContent = fundraiser[0].endDate;
-    });
-
-  // med limits (kun 7 visning den nyeste )
-  db.collection("donations")
-    .orderBy("date", "desc")
-    .limit(7)
-    .get()
-    .then(snapshot => {
-      snapshot.docs.forEach(doc => {
-        topDonations.push(doc.data());
-      });
-      topDonations.forEach(person => {
-        // donated = topDonations;
-
-        donated.push(topDonations[increaseNr].amount);
-
-        increaseNr++;
-      });
-      document.querySelector(
-        "#myList li:nth-child(1) span:nth-child(1)"
-      ).textContent = topDonations[0].firstname;
-      document.querySelector(
-        "#myList li:nth-child(1) span:nth-child(2)"
-      ).textContent = topDonations[0].amount + " DKK";
-      document.querySelector(
-        "#myList li:nth-child(2) span:nth-child(1)"
-      ).textContent = topDonations[1].firstname;
-      document.querySelector(
-        "#myList li:nth-child(2) span:nth-child(2)"
-      ).textContent = topDonations[1].amount + " DKK";
-      document.querySelector(
-        "#myList li:nth-child(3) span:nth-child(1)"
-      ).textContent = topDonations[2].firstname;
-      document.querySelector(
-        "#myList li:nth-child(3) span:nth-child(2)"
-      ).textContent = topDonations[2].amount + " DKK";
-      document.querySelector(
-        "#myList li:nth-child(4) span:nth-child(1)"
-      ).textContent = topDonations[3].firstname;
-      document.querySelector(
-        "#myList li:nth-child(4) span:nth-child(2)"
-      ).textContent = topDonations[3].amount + " DKK";
-      document.querySelector(
-        "#myList li:nth-child(5) span:nth-child(1)"
-      ).textContent = topDonations[4].firstname;
-      document.querySelector(
-        "#myList li:nth-child(5) span:nth-child(2)"
-      ).textContent = topDonations[4].amount + " DKK";
-      document.querySelector(
-        "#myList li:nth-child(6) span:nth-child(1)"
-      ).textContent = topDonations[5].firstname;
-      document.querySelector(
-        "#myList li:nth-child(6) span:nth-child(2)"
-      ).textContent = topDonations[5].amount + " DKK";
-      document.querySelector(
-        "#myList li:nth-child(7) span:nth-child(1)"
-      ).textContent = topDonations[6].firstname;
-      document.querySelector(
-        "#myList li:nth-child(7) span:nth-child(2)"
-      ).textContent = topDonations[6].amount + " DKK";
-    });
-
-  db.collection("donations")
-    .get()
-    .then(snapshot => {
-      snapshot.docs.forEach(doc => {
-        donations.push(doc.data());
-      });
-      createCountry();
-      countCountry();
-      countDate();
-
-      document.querySelector(".graph").children[0].style.height =
-        week1.length + "%";
-      document.querySelector(".graph").children[1].style.height =
-        week2.length + "%";
-      document.querySelector(".graph").children[2].style.height =
-        week3.length + "%";
-      document.querySelector(".graph").children[3].style.height =
-        week4.length + "%";
-      document.querySelector(".graph").children[3].style.height =
-        week5.length + "%";
-      document.querySelector(".graph").children[3].style.height =
-        week6.length + "%";
-      document.querySelector(".graph").children[3].style.height =
-        week7.length + "%";
-      document.querySelector(".graph").children[3].style.height =
-        week8.length + "%";
-      document.querySelector(".graph").children[3].style.height =
-        week9.length + "%";
-      document.querySelector(".graph").children[3].style.height =
-        week10.length + "%";
-
-      sum = fyn.length + jylland.length + sjaelland.length;
-
-      countFyn.textContent = Math.round((fyn.length / sum) * 100) + "%";
-      countJylland.textContent = Math.round((jylland.length / sum) * 100) + "%";
-      countsjaelland.textContent =
-        Math.round((sjaelland.length / sum) * 100) + "%";
-    });
   let acc = document.getElementsByClassName("accordion");
   var i;
   for (i = 0; i < acc.length; i++) {
@@ -494,6 +391,116 @@ function detailsInit() {
         panel.style.display = "block";
       }
     });
+
+    db.collection("fundraise")
+      .get()
+      .then(snapshot => {
+        snapshot.docs.forEach(doc => {
+          fundraiser.push(doc.data());
+        });
+        document.querySelector(".start").textContent = fundraiser[0].startDate;
+        document.querySelector(".end").textContent = fundraiser[0].endDate;
+      });
+
+    // med limits (kun 7 visning den nyeste )
+    db.collection("donations")
+      .orderBy("date", "desc")
+      .limit(7)
+      .get()
+      .then(snapshot => {
+        snapshot.docs.forEach(doc => {
+          topDonations.push(doc.data());
+        });
+        topDonations.forEach(person => {
+          // donated = topDonations;
+
+          donated.push(topDonations[increaseNr].amount);
+
+          increaseNr++;
+        });
+        document.querySelector(
+          "#myList li:nth-child(1) span:nth-child(1)"
+        ).textContent = topDonations[0].firstname;
+        document.querySelector(
+          "#myList li:nth-child(1) span:nth-child(2)"
+        ).textContent = topDonations[0].amount + " DKK";
+        document.querySelector(
+          "#myList li:nth-child(2) span:nth-child(1)"
+        ).textContent = topDonations[1].firstname;
+        document.querySelector(
+          "#myList li:nth-child(2) span:nth-child(2)"
+        ).textContent = topDonations[1].amount + " DKK";
+        document.querySelector(
+          "#myList li:nth-child(3) span:nth-child(1)"
+        ).textContent = topDonations[2].firstname;
+        document.querySelector(
+          "#myList li:nth-child(3) span:nth-child(2)"
+        ).textContent = topDonations[2].amount + " DKK";
+        document.querySelector(
+          "#myList li:nth-child(4) span:nth-child(1)"
+        ).textContent = topDonations[3].firstname;
+        document.querySelector(
+          "#myList li:nth-child(4) span:nth-child(2)"
+        ).textContent = topDonations[3].amount + " DKK";
+        document.querySelector(
+          "#myList li:nth-child(5) span:nth-child(1)"
+        ).textContent = topDonations[4].firstname;
+        document.querySelector(
+          "#myList li:nth-child(5) span:nth-child(2)"
+        ).textContent = topDonations[4].amount + " DKK";
+        document.querySelector(
+          "#myList li:nth-child(6) span:nth-child(1)"
+        ).textContent = topDonations[5].firstname;
+        document.querySelector(
+          "#myList li:nth-child(6) span:nth-child(2)"
+        ).textContent = topDonations[5].amount + " DKK";
+        document.querySelector(
+          "#myList li:nth-child(7) span:nth-child(1)"
+        ).textContent = topDonations[6].firstname;
+        document.querySelector(
+          "#myList li:nth-child(7) span:nth-child(2)"
+        ).textContent = topDonations[6].amount + " DKK";
+      });
+
+    db.collection("donations")
+      .get()
+      .then(snapshot => {
+        snapshot.docs.forEach(doc => {
+          donations.push(doc.data());
+        });
+        createCountry();
+        countCountry();
+        countDate();
+
+        document.querySelector(".graph").children[0].style.height =
+          week1.length + "%";
+        document.querySelector(".graph").children[1].style.height =
+          week2.length + "%";
+        document.querySelector(".graph").children[2].style.height =
+          week3.length + "%";
+        document.querySelector(".graph").children[3].style.height =
+          week4.length + "%";
+        document.querySelector(".graph").children[3].style.height =
+          week5.length + "%";
+        document.querySelector(".graph").children[3].style.height =
+          week6.length + "%";
+        document.querySelector(".graph").children[3].style.height =
+          week7.length + "%";
+        document.querySelector(".graph").children[3].style.height =
+          week8.length + "%";
+        document.querySelector(".graph").children[3].style.height =
+          week9.length + "%";
+        document.querySelector(".graph").children[3].style.height =
+          week10.length + "%";
+
+        sum = fyn.length + jylland.length + sjaelland.length;
+
+        countFyn.textContent = Math.round((fyn.length / sum) * 100) + "%";
+        countJylland.textContent =
+          Math.round((jylland.length / sum) * 100) + "%";
+        countsjaelland.textContent =
+          Math.round((sjaelland.length / sum) * 100) + "%";
+      });
   }
 }
 
