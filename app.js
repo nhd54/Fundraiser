@@ -44,7 +44,7 @@ let loppekur = [];
 let hundegodbidder = [];
 let hundefoder = [];
 let menuOption = document.querySelector(".menu");
-const form = document.querySelector("#add-cafe-form");
+const form = document.querySelector("#add-donation-form");
 let users = [];
 let week1 = [];
 let week2 = [];
@@ -56,9 +56,9 @@ let week7 = [];
 let week8 = [];
 let week9 = [];
 let week10 = [];
-let countFyn = document.querySelector(".mapInfo span:nth-child(2)");
-let countsjaelland = document.querySelector("#country span:nth-child(3)");
-let countJylland = document.querySelector("#country span:nth-child(1)");
+let countFyn = document.querySelector(".mapInfo p:nth-child(2) span");
+let countsjaelland = document.querySelector("#country p:nth-child(3) span");
+let countJylland = document.querySelector("#country p:nth-child(1) span");
 let i = 0;
 let donated = [];
 
@@ -153,6 +153,7 @@ function indexInit() {
         fundraisertest[0].firstname +
         "<br>" +
         fundraisertest[0].amount +
+        " DKK" +
         fundraisertest[0].attend +
         fundraisertest[0].textil;
     });
@@ -171,34 +172,34 @@ function indexInit() {
     e.preventDefault();
 
     document.querySelector("#giveDonation").addEventListener("click", () => {
-      if (form.annonym.checked == true) {
+      if (form.anonym.checked == true) {
         console.log("jeg er checked");
 
         db.collection("donations").add({
-          firstname: "annonym",
+          firstname: "anonym",
           lastname: form.lastname.value,
           email: form.email.value,
-          country: form.country.value + " DKK",
+          country: form.country.value,
           amount: form.amount.value,
           attend: form.pleje.value,
           textil: form.textil.value,
           date: today
         });
-      } else if (form.annonym.checked == false) {
+      } else if (form.anonym.checked == false) {
         console.log("jeg er ikke checked");
         db.collection("donations").add({
           firstname: form.name.value,
           lastname: form.lastname.value,
           email: form.email.value,
           country: form.country.value,
-          amount: form.amount.value + " DKK",
+          amount: form.amount.value,
           attend: form.pleje.value,
           textil: form.textil.value,
           date: today
         });
       }
 
-      document.querySelector("#add-cafe-form").style.display = "none";
+      document.querySelector("#add-donation-form").style.display = "none";
       document.querySelector(".done").style.display = "grid";
       setTimeout(function() {
         window.location.replace("index.html");
@@ -208,6 +209,20 @@ function indexInit() {
 }
 
 function adminInit() {
+  let acc = document.getElementsByClassName("accordion");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      let panel = document.querySelector(".menu");
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+
   adminForm.addEventListener("submit", e => {
     e.preventDefault();
 
@@ -275,18 +290,21 @@ function dashboardInit() {
         top3[0].firstname +
         "<br>" +
         top3[0].amount +
+        " DKK" +
         top3[0].attend +
         top3[0].textil;
       nytest.children[2].children[2].innerHTML =
         top3[1].firstname +
         "<br>" +
         top3[1].amount +
+        " DKK" +
         top3[1].attend +
         top3[1].textil;
       nytest.children[3].children[2].innerHTML =
         top3[2].firstname +
         "<br>" +
         top3[2].amount +
+        " DKK" +
         top3[2].attend +
         top3[2].textil;
     });
@@ -333,7 +351,7 @@ function dashboardInit() {
 
   function test() {
     fullAmount.forEach(sum => {
-      moneyAmount = moneyAmount + parseInt(fullAmount);
+      moneyAmount = sum + parseInt(fullAmount);
     });
     document.querySelector(".indsamlet").textContent = moneyAmount + " DKK";
   }
@@ -373,19 +391,54 @@ function detailsInit() {
         topDonations.push(doc.data());
       });
       topDonations.forEach(person => {
-        var node = document.createElement("LI");
         // donated = topDonations;
 
         donated.push(topDonations[increaseNr].amount);
 
-        var textnode = document.createTextNode(person.firstname);
-        node.appendChild(textnode);
-        document.getElementById("myList").appendChild(node);
-
-        document.querySelector("#allDonation").appendChild(span);
-
         increaseNr++;
       });
+      document.querySelector(
+        "#myList li:nth-child(1) span:nth-child(1)"
+      ).textContent = topDonations[0].firstname;
+      document.querySelector(
+        "#myList li:nth-child(1) span:nth-child(2)"
+      ).textContent = topDonations[0].amount + " DKK";
+      document.querySelector(
+        "#myList li:nth-child(2) span:nth-child(1)"
+      ).textContent = topDonations[1].firstname;
+      document.querySelector(
+        "#myList li:nth-child(2) span:nth-child(2)"
+      ).textContent = topDonations[1].amount + " DKK";
+      document.querySelector(
+        "#myList li:nth-child(3) span:nth-child(1)"
+      ).textContent = topDonations[2].firstname;
+      document.querySelector(
+        "#myList li:nth-child(3) span:nth-child(2)"
+      ).textContent = topDonations[2].amount + " DKK";
+      document.querySelector(
+        "#myList li:nth-child(4) span:nth-child(1)"
+      ).textContent = topDonations[3].firstname;
+      document.querySelector(
+        "#myList li:nth-child(4) span:nth-child(2)"
+      ).textContent = topDonations[3].amount + " DKK";
+      document.querySelector(
+        "#myList li:nth-child(5) span:nth-child(1)"
+      ).textContent = topDonations[4].firstname;
+      document.querySelector(
+        "#myList li:nth-child(5) span:nth-child(2)"
+      ).textContent = topDonations[4].amount + " DKK";
+      document.querySelector(
+        "#myList li:nth-child(6) span:nth-child(1)"
+      ).textContent = topDonations[5].firstname;
+      document.querySelector(
+        "#myList li:nth-child(6) span:nth-child(2)"
+      ).textContent = topDonations[5].amount + " DKK";
+      document.querySelector(
+        "#myList li:nth-child(7) span:nth-child(1)"
+      ).textContent = topDonations[6].firstname;
+      document.querySelector(
+        "#myList li:nth-child(7) span:nth-child(2)"
+      ).textContent = topDonations[6].amount + " DKK";
     });
 
   db.collection("donations")
@@ -557,7 +610,7 @@ function countCountry() {
 
 function test() {
   fullAmount.forEach(sum => {
-    moneyAmount = moneyAmount + parseInt(fullAmount);
+    moneyAmount = sum + parseInt(fullAmount);
   });
   document.querySelector(".indsamlet").textContent = moneyAmount + " DKK";
 }
