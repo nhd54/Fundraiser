@@ -1409,3 +1409,9 @@ span {
     #admin #wrapper #dashboard .settings #profile {
       border: none;
       min-height: 102vh; } }
+
+#admin #dashboard .settings #profile {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  border-bottom: none; }
