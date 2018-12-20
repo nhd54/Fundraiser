@@ -178,7 +178,7 @@ function indexInit() {
         console.log("jeg er checked");
 
         db.collection("donations").add({
-          firstname: "anonym",
+          firstname: "Anonym",
           lastname: form.lastname.value,
           email: form.email.value,
           country: form.country.value,
