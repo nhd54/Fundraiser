@@ -707,12 +707,13 @@ span {
   .footerPopUp {
     height: 25vw;
     width: 80vw;
+    margin-top: 3vh;
     background-color: #6a82a0; }
   .popUp {
     position: absolute;
     width: 80vw;
     left: 8vw;
-    height: 112%;
+    height: auto;
     background-color: #fff;
     display: none; }
     .popUp .close {
@@ -745,7 +746,8 @@ span {
     .popUp .done {
       display: none;
       grid-template-columns: repeat(2, 1fr);
-      margin: 2vw 0 0 0; }
+      margin: 2vw 0 0 0;
+      height: auto; }
       .popUp .done h2,
       .popUp .done span {
         grid-column: span 2;
@@ -764,7 +766,8 @@ span {
         justify-items: center;
         width: 80vw;
         display: grid;
-        grid-template-columns: repeat(2, 1fr); }
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 5vh; }
         .popUp .done .buttons img {
           width: 7vw;
           margin: 0 1vw 0 0; }
@@ -807,7 +810,8 @@ span {
         .popUp #add-donation-form .leftForm .iconDonation {
           width: 15vw; }
         .popUp #add-donation-form .leftForm .img {
-          width: 10vw; }
+          width: 10vw;
+          margin-top: 4vh; }
       .popUp #add-donation-form .rightForm {
         width: 80vw;
         padding: 1vw 0 0 3vw;

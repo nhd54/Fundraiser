@@ -45,6 +45,7 @@ html {
   display: grid;
   grid-template-columns: 20% 40% 40%;
 }
+
 #allDonation li:before {
   content: url(../../image/icon_donater_lille.svg);
   width: 45%;
@@ -985,13 +986,14 @@ span {
   .footerPopUp {
     height: 25vw;
     width: 80vw;
+    margin-top: 3vh;
     background-color: $color2;
   }
   .popUp {
     position: absolute;
     width: 80vw;
     left: 8vw;
-    height: 112%;
+    height: auto;
     background-color: #fff;
     display: none;
 
@@ -1030,6 +1032,7 @@ span {
       display: none;
       grid-template-columns: repeat(2, 1fr);
       margin: 2vw 0 0 0;
+      height: auto;
 
       h2,
       span {
@@ -1053,6 +1056,7 @@ span {
         width: 80vw;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 5vh;
 
         img {
           width: 7vw;
@@ -1112,6 +1116,7 @@ span {
         }
         .img {
           width: 10vw;
+          margin-top: 4vh;
         }
       }
       .rightForm {

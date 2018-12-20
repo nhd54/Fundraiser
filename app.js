@@ -154,7 +154,9 @@ function indexInit() {
         "<br>" +
         fundraisertest[0].amount +
         " DKK" +
+        " " +
         fundraisertest[0].attend +
+        " " +
         fundraisertest[0].textil;
     });
 
