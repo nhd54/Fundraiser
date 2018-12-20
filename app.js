@@ -508,6 +508,7 @@ function settingInit() {
       snapshot.docs.forEach(doc => {
         fundraiser.push(doc.data());
       });
+      document.querySelector(".support").textContent = fundraiser[0].name;
       document.querySelector(".kontonr").textContent = fundraiser[0].Kontonr;
       document.querySelector(".iban").textContent = fundraiser[0].IBAN;
       document.querySelector(".swift").textContent = fundraiser[0].swift;

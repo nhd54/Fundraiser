@@ -531,7 +531,7 @@ article {
       #wrapper #dashboard .settings #profile {
         min-height: 40vh;
         width: 38vw;
-        padding: 0 0 1vw 0;
+        padding: 2vh 0 1vw 0;
         border-right: 2px solid #6a82a0;
         border-bottom: 2px solid #6a82a0; }
         #wrapper #dashboard .settings #profile .bottomPos {
@@ -544,7 +544,7 @@ article {
       #wrapper #dashboard .settings #fundraise {
         min-height: 30vh;
         width: 38vw;
-        padding: 2vw 0 0 0;
+        padding: 0.9vw 0 0 0;
         border-right: 2px solid #6a82a0; }
         #wrapper #dashboard .settings #fundraise .bottomPos {
           margin: 2vw 0 0 3vw;
@@ -1282,6 +1282,10 @@ span {
     display: grid; } }
 
 @media only screen and (max-width: 500px) {
+  .kortSpan::before {
+    content: " ";
+    clear: right;
+    display: block; }
   #overallDonations {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
@@ -1306,7 +1310,7 @@ span {
     text-align: center; }
   .kortSpan {
     text-align: center;
-    margin: 0 3vw 0 0; }
+    margin: 0; }
   .accordion {
     text-align: center;
     position: fixed;
